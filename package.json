@@ -4,6 +4,7 @@
   "description": "uniapp 实用的 use 库 😎",
   "main": "uni_modules/tob-less/index.js",
   "scripts": {
+    "auto:sync": "node scripts/sync.js",
     "auto:create": "node scripts/create.js",
     "auto:remove": "node scripts/remove.js"
   },
