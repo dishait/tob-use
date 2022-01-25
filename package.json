@@ -1,15 +1,25 @@
 {
   "name": "tob-use",
   "version": "1.0.0",
-  "description": "`uniapp` 的实用的 `use` 库 😎",
-  "main": "main.js",
+  "description": "uniapp 实用的 use 库 😎",
+  "main": "uni_modules/tob-less/index.js",
   "scripts": {
     "auto:create": "node scripts/create.js",
     "auto:remove": "node scripts/remove.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "tob",
+    "use",
+    "vue3",
+    "uniapp",
+    "reactivity"
+  ],
+  "author": {
+    "name": "markthree",
+    "email": "1801982702@qq.com",
+    "url": "https://github.com/markthree"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@markthree/ilazy": "^1.0.2",
     "@markthree/node-shared": "^1.3.2",
