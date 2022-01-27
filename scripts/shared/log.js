@@ -6,7 +6,7 @@ const noticeSuccess = (type = '创建') => {
 }
 
 const noticeFail = (type = '创建') => {
-	const msg = terminalColor.green(type + '失败')
+	const msg = terminalColor.red(type + '失败')
 	console.log(msg)
 }
 

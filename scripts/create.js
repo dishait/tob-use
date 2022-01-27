@@ -8,6 +8,7 @@ const {
 	baseDestPaths
 } = require('./shared/paths')
 const {
+	writeJson,
 	createPath,
 	createFile,
 	readFileSync,
@@ -19,6 +20,9 @@ const {
 	noticeSuccess
 } = require('./shared/log')
 const { getModulesName } = require('./shared/modules')
+const pagesJson = require('../pages.json')
+
+const p = createPath(__dirname)
 
 const autoCreate = async () => {
 	const type = await useInquirerList(
@@ -66,7 +70,13 @@ const createPage = async (options = {}) => {
 	const dest = dp(`./${sort}/${name}/${name}.vue`)
 	const shouldCreate = await isWillCreate(dest, '页面')
 	if (shouldCreate) {
+		pagesJson.pages.push({
+			path: `pages/${sort}/${name}/${name}`
+		})
 		await gen(src, dest, { name, sort })
+		await writeJson(p('../pages.json'), pagesJson, {
+			spaces: '\t'
+		})
 		return noticeSuccess()
 	}
 	noticeFail()
