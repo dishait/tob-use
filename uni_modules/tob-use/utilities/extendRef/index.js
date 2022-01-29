@@ -3,7 +3,7 @@ import { isRef } from 'vue'
 /**
  * ref扩展
  */
-export function extendRef(ref, extend, options = {}) {
+export const extendRef = (ref, extend, options = {}) => {
 	const { enumerable = false, unwrap = true } = options
 
 	for (const [key, value] of Object.entries(extend)) {
