@@ -27,7 +27,7 @@ const autoRemove = async () => {
 	const n = getModulesName(type)
 	const sort = await useInquirerList(
 		`请选择该${n}属于的种类`,
-		{ choices: ['shared'] }
+		{ choices: ['utilities'] }
 	)
 
 	const name = await useInquirerQuestion(

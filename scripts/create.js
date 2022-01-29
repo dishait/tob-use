@@ -38,8 +38,8 @@ const autoCreate = async () => {
 	const sort = await useInquirerList(
 		`请问该${n}属于以下哪个分类?`,
 		{
-			default: 'shared',
-			choices: ['shared']
+			default: 'utilities',
+			choices: ['utilities']
 		}
 	)
 
