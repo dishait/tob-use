@@ -41,6 +41,49 @@ export const debounceFilter = (ms, options = {}) => {
     return filter
 }
 
+export const throttleFilter = (ms, trailing = true, leading = true) => {
+    let timer
+    let lastExec = 0
+    let preventLeading = !leading
+  
+    const clear = () => {
+      if (timer) {
+        clearTimeout(timer)
+        timer = undefined
+      }
+    }
+  
+    const filter = (invoke) => {
+      const duration = unref(ms)
+      const elapsed = Date.now() - lastExec
+  
+      clear()
+  
+      if (duration <= 0) {
+        lastExec = Date.now()
+        return invoke()
+      }
+  
+      if (elapsed > duration) {
+        lastExec = Date.now()
+        if (preventLeading) preventLeading = false
+        else invoke()
+      }
+      if (trailing) {
+        timer = setTimeout(() => {
+          lastExec = Date.now()
+          if (!leading) preventLeading = true
+          clear()
+          invoke()
+        }, duration)
+      }
+  
+      if (!leading && !timer) timer = setTimeout(() => preventLeading = true, duration)
+    }
+  
+    return filter
+}
+
 export const createFilterWrapper = (filter, fn) => {
     function wrapper(this, ...args) {
         filter(() => fn.apply(this, args), {
