@@ -23,34 +23,48 @@ export const controlledRef = (initial, options = {}) => {
 		}
 	})
 
-	function get(tracking = true) {
-		if (tracking) track()
+	// 获取
+	const get = (tracking = true) => {
+		if (tracking) {
+			track()
+		}
 		return source
 	}
 
-	function set(value, triggering = true) {
-		if (value === source) return
+	// 设置
+	const set = (value, triggering = true) => {
+		const shouldUpdate = value !== source
+		if (!shouldUpdate) return
 
 		const old = source
+		// 调用变更之前的 hook
 		if (options.onBeforeChange?.(value, old) === false) {
 			return
 		}
 
 		source = value
 
+		// 调用变更之后的 hook
 		options.onChanged?.(value, old)
 
-		if (triggering) trigger()
+		if (triggering) {
+			trigger()
+		}
 	}
 
+	// 不触发收集的获取
 	const untrackedGet = () => get(false)
 
+	// 单纯的设置，单不触发副作用
 	const silentSet = v => set(v, false)
 
+	// 偷窥，untrackedGet 的别名
 	const peek = () => get(false)
 
+	// 轻放，silentSet 的别名
 	const lay = v => set(v, false)
 
+	// 扩展原有的 ref
 	return extendRef(
 		ref,
 		{
