@@ -39,7 +39,13 @@ const autoCreate = async () => {
 		`请问该${n}属于以下哪个分类?`,
 		{
 			default: 'utilities',
-			choices: ['utilities', 'watch', 'misc', 'animation']
+			choices: [
+				'utilities',
+				'watch',
+				'misc',
+				'animation',
+				'component'
+			]
 		}
 	)
 

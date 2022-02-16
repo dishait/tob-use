@@ -1,4 +1,5 @@
-import { ref, computed, watch } from 'vue'
+import { ref } from 'vue'
+import { useIntervalFn } from '../useIntervalFn'
 
 /**
  * 间隔
