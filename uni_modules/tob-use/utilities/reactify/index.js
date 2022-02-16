@@ -3,7 +3,7 @@ import { computed, unref } from 'vue'
 /**
  * 响应式转换
  */
-export const reactify = () => {
+export const reactify = fn => {
 	return function (...args) {
 		return computed(() =>
 			fn.apply(

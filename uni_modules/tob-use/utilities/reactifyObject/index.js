@@ -21,6 +21,7 @@ export const reactifyObject = (obj, optionsOrKeys = {}) => {
 			const value = obj[key]
 			return [
 				key,
+				// 将对象上所有的函数转换为解除 ref 参数的函数
 				typeof value === 'function'
 					? reactify(value.bind(obj))
 					: value
