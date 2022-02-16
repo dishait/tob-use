@@ -6,7 +6,7 @@ import { noop } from '../../shared/base'
  */
 export const useAsyncQueue = (tasks, options = {}) => {
 	const {
-		interrupt = true,
+		interrupt = true, // 允许失败时打断
 		onError = noop,
 		onFinished = noop
 	} = options
@@ -22,9 +22,11 @@ export const useAsyncQueue = (tasks, options = {}) => {
 	)
 	const result = reactive(initialResult)
 
-	const activeIndex = ref < number > -1
+	const activeIndex = ref(-1)
 
-	if (!tasks || tasks.length === 0) {
+	// 无任务时，直接返回
+	const isEmptyTasks = !tasks || tasks.length === 0
+	if (isEmptyTasks) {
 		onFinished()
 		return {
 			activeIndex,
@@ -32,7 +34,8 @@ export const useAsyncQueue = (tasks, options = {}) => {
 		}
 	}
 
-	function updateResult(state, res) {
+	// 更新结果
+	const updateResult = (state, res) => {
 		activeIndex.value++
 		result[activeIndex.value].data = res
 		result[activeIndex.value].state = state
@@ -41,23 +44,29 @@ export const useAsyncQueue = (tasks, options = {}) => {
 	tasks.reduce((prev, curr) => {
 		return prev
 			.then(prevRes => {
-				if (
+				// 上一个失败时打断并调用完成回调
+				const isRejected =
 					result[activeIndex.value]?.state ===
-						promiseState.rejected &&
-					interrupt
-				) {
+					promiseState.rejected
+				if (isRejected && interrupt) {
 					onFinished()
 					return
 				}
 
 				return curr(prevRes).then(currentRes => {
 					updateResult(promiseState.fulfilled, currentRes)
-					activeIndex.value === tasks.length - 1 &&
+					// 结束时调用完成 hook
+					const isFinished =
+						activeIndex.value === tasks.length - 1
+					if (isFinished) {
 						onFinished()
+					}
+
 					return currentRes
 				})
 			})
 			.catch(e => {
+				// 错误处理，调用失败回调
 				updateResult(promiseState.rejected, e)
 				onError()
 				return e
