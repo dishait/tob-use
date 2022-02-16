@@ -1,4 +1,5 @@
 import { ref, watch } from 'vue'
+import { useThrottleFn } from '../useThrottleFn'
 
 /**
  * 使用节流
