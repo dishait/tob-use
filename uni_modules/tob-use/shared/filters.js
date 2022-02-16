@@ -1,4 +1,4 @@
-import { unref } from "vue"
+import { unref, ref } from "vue"
 
 export const debounceFilter = (ms, options = {}) => {
     let timer
@@ -118,4 +118,22 @@ export const watchWithFilter = (
     ),
     watchOptions,
   )
+}
+
+export function pausableFilter(extendFilter = bypassFilter) {
+  const isActive = ref(true)
+
+  function pause() {
+    isActive.value = false
+  }
+  function resume() {
+    isActive.value = true
+  }
+
+  const eventFilter = (...args) => {
+    if (isActive.value)
+      extendFilter(...args)
+  }
+
+  return { isActive, pause, resume, eventFilter }
 }
