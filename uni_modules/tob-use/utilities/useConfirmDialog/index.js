@@ -12,6 +12,7 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 
 	let _resolve = noop
 
+	// 显示
 	const reveal = data => {
 		revealHook.trigger(data)
 		revealed.value = true
@@ -21,6 +22,7 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 		})
 	}
 
+	// 确认
 	const confirm = data => {
 		revealed.value = false
 		confirmHook.trigger(data)
@@ -28,6 +30,7 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 		_resolve({ data, isCanceled: false })
 	}
 
+	// 取消
 	const cancel = data => {
 		revealed.value = false
 		cancelHook.trigger(data)
@@ -41,6 +44,6 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 		onReveal: revealHook.on,
 		onCancel: cancelHook.on,
 		onConfirm: confirmHook.on,
-		isRevealed: computed(() => revealed.value)
+		isRevealed: computed(() => revealed.value) // 是否显示
 	}
 }
