@@ -13,29 +13,31 @@ export const useMemoize = (resolver, options) => {
 	}
 	const cache = initCache()
 
-	/**
-	 * Generate key from args
-	 */
 	const generateKey = (...args) =>
 		options?.getKey
 			? options.getKey(...args)
 			: JSON.stringify(args)
 
+	// 加载数据(私有)
 	const _loadData = (key, ...args) => {
 		cache.set(key, resolver(...args))
 		return cache.get(key)
 	}
+	// 加载数据
 	const loadData = (...args) =>
 		_loadData(generateKey(...args), ...args)
 
+	// 删除数据
 	const deleteData = (...args) => {
 		cache.delete(generateKey(...args))
 	}
 
+	// 清空数据
 	const clearData = () => {
 		cache.clear()
 	}
 
+	// 记忆函数 (有缓存时走缓存)
 	const memoized = (...args) => {
 		const key = generateKey(...args)
 		if (cache.has(key)) return cache.get(key)
