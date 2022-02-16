@@ -1,7 +1,7 @@
 import { watch } from 'vue'
 
 /**
- * 保持目标ref跟源同步
+ * 保持目标 ref 跟源同步
  */
 export const syncRef = (source, targets, options = {}) => {
 	const {
