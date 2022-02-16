@@ -9,6 +9,7 @@ export const controlledComputed = (source, fn) => {
 	let trigger
 	const dirty = ref(true)
 
+	// 只有 source 源改变时才去触发
 	watch(
 		source,
 		() => {
