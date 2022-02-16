@@ -12,42 +12,52 @@ import {
 /**
  * 偏移分页
  */
-export const useOffsetPagination = options => {
+export const useOffsetPagination = (options = {}) => {
 	const {
-		total = Infinity,
-		pageSize = 10,
 		page = 1,
+		pageSize = 10,
+		total = Infinity,
 		onPageChange = noop,
 		onPageSizeChange = noop,
 		onPageCountChange = noop
 	} = options
 
+	// 当前总页数
 	const currentPageSize = useClamp(pageSize, 1, Infinity)
 
+	// 每页的元素数量
 	const pageCount = computed(() =>
 		Math.ceil(unref(total) / unref(currentPageSize))
 	)
 
+	// 当前第几页
 	const currentPage = useClamp(page, 1, pageCount)
 
+	// 是否是第一页
 	const isFirstPage = computed(
 		() => currentPage.value === 1
 	)
+
+	// 是否是最后一页
 	const isLastPage = computed(
 		() => currentPage.value === pageCount.value
 	)
 
-	if (isRef(page)) biSyncRef(page, currentPage)
-
-	if (isRef(pageSize)) biSyncRef(pageSize, currentPageSize)
-
-	function prev() {
-		currentPage.value--
+	// 同步当前第几页
+	if (isRef(page)) {
+		biSyncRef(page, currentPage)
 	}
 
-	function next() {
-		currentPage.value++
+	// 同步当前总页数
+	if (isRef(pageSize)) {
+		biSyncRef(pageSize, currentPageSize)
 	}
+
+	// 上一页
+	const prev = () => currentPage.value--
+
+	// 下一页
+	const next = () => currentPage.value++
 
 	const returnValue = {
 		currentPage,
@@ -59,14 +69,17 @@ export const useOffsetPagination = options => {
 		next
 	}
 
+	// 当前第几页变化时，触发 onPageChange
 	watch(currentPage, () => {
 		onPageChange(reactive(returnValue))
 	})
 
+	// 当前总页数变化时，触发 onPageSizeChange
 	watch(currentPageSize, () => {
 		onPageSizeChange(reactive(returnValue))
 	})
 
+	// 每页的元素数量变化时，触发 onPageCountChange
 	watch(pageCount, () => {
 		onPageCountChange(reactive(returnValue))
 	})
