@@ -3,14 +3,13 @@ import { toRefs as _toRefs, customRef, isRef } from 'vue'
 /**
  * 扩展之后的toRefs，允许接受对象型的ref
  */
-export const toRefs = () => {
+export const toRefs = objectRef => {
 	if (!isRef(objectRef)) return _toRefs(objectRef)
 
 	const result = Array.isArray(objectRef.value)
 		? new Array(objectRef.value.length)
 		: {}
 
-	// eslint-disable-next-line no-restricted-syntax
 	for (const key in objectRef.value) {
 		result[key] = customRef(() => ({
 			get() {
