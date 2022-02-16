@@ -2,12 +2,13 @@ import { getCurrentScope } from 'vue'
 import { events } from '../../shared/base'
 
 /**
- *
+ * 使用事件 bus
  */
-export const useEventBus = () => {
+export const useEventBus = key => {
 	const scope = getCurrentScope()
 
-	function on(listener) {
+	// 注册
+	const on = listener => {
 		const listeners = events.get(key) || []
 		listeners.push(listener)
 		events.set(key, listeners)
@@ -18,16 +19,17 @@ export const useEventBus = () => {
 		return _off
 	}
 
-	function once(listener) {
+	// 注册一次
+	const once = listener => {
 		function _listener(...args) {
 			off(_listener)
-			// @ts-expect-error cast
 			listener(...args)
 		}
 		return on(_listener)
 	}
 
-	function off(listener) {
+	// 卸载
+	const off = listener => {
 		const listeners = events.get(key)
 		if (!listeners) return
 
@@ -36,12 +38,12 @@ export const useEventBus = () => {
 		if (!listeners.length) events.delete(key)
 	}
 
-	function reset() {
-		events.delete(key)
-	}
+	// 重置
+	const reset = () => events.delete(key)
 
-	function emit(event) {
-		events.get(key)?.forEach(v => v(event))
+	// 触发
+	const emit = event => {
+		return events.get(key)?.forEach(v => v(event))
 	}
 
 	return { on, once, off, emit, reset }
