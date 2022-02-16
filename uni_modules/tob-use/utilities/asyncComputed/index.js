@@ -11,17 +11,19 @@ export const asyncComputed = (
 ) => {
 	const options = formatOptions(optionsOrRef)
 	const {
-		lazy = false,
-		onError = noop,
-		evaluating = undefined
+		lazy = false, // 懒处理
+		onError = noop, // 错误处理
+		evaluating = undefined // 异步是否在调用中
 	} = options
 
 	const started = ref(!lazy)
 	const current = ref(initialState)
-	let counter = 0
+	let counter = 0 // 计数器，用来协调异步调用次数
 
 	watchEffect(async onInvalidate => {
-		if (!started.value) return
+		if (!started.value) {
+			return
+		}
 
 		counter++
 
@@ -30,13 +32,14 @@ export const asyncComputed = (
 		let hasFinished = false
 
 		if (evaluating) {
-			Promise.resolve().then(() => {
+			runNextMicroTask(() => {
 				evaluating.value = true
 			})
 		}
 
 		try {
 			const result = await evaluationCallback(
+				// 副作用清除函数
 				cancelCallback => {
 					onInvalidate(() => {
 						if (evaluating) {
@@ -49,13 +52,17 @@ export const asyncComputed = (
 				}
 			)
 
+			// 当计算器与当前的调用相同时才允许更新
+			// 防止多次调用异步触发无效的更新
 			const shouldUpdate = counterAtBeginning === counter
 			if (shouldUpdate) {
 				current.value = result
 			}
 		} catch (e) {
+			// 错误处理，默认为 noop 不处理
 			onError(e)
 		} finally {
+			// 完成后
 			if (evaluating) {
 				evaluating.value = false
 			}
@@ -63,6 +70,7 @@ export const asyncComputed = (
 		}
 	})
 
+	// lazy 选项开启时，使用计算属性缓存计算结果
 	if (lazy) {
 		return computed(() => {
 			started.value = true
@@ -73,6 +81,9 @@ export const asyncComputed = (
 	return current
 }
 
+/**
+ * 格式化选项
+ */
 const formatOptions = optionsOrRef => {
 	let options
 	if (isRef(optionsOrRef)) {
@@ -82,3 +93,8 @@ const formatOptions = optionsOrRef => {
 	}
 	return options
 }
+
+/**
+ * 运行在下次微任务
+ */
+const runNextMicroTask = cb => Promise.resolve().then(cb)
