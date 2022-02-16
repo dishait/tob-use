@@ -94,3 +94,28 @@ export const createFilterWrapper = (filter, fn) => {
     }
     return wrapper
 }
+
+
+export const bypassFilter = (invoke) => {
+  return invoke()
+}
+
+export const watchWithFilter = (
+  source,
+  cb,
+  options = {}
+) => {
+  const {
+    eventFilter = bypassFilter,
+    ...watchOptions
+  } = options
+
+  return watch(
+    source,
+    createFilterWrapper(
+      eventFilter,
+      cb,
+    ),
+    watchOptions,
+  )
+}
