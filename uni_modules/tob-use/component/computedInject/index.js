@@ -1,4 +1,5 @@
 import { computed, inject } from 'vue'
+import { isFunction } from '../../shared/is'
 
 /**
  * 计算属性型 inject
@@ -14,7 +15,7 @@ export const computedInject = () => {
 			treatDefaultAsFactory
 		)
 
-	if (typeof options === 'function') {
+	if (isFunction(options)) {
 		return computed(ctx => options(source, ctx))
 	} else {
 		return computed({

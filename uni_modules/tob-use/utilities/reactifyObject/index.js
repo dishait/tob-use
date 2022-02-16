@@ -1,3 +1,4 @@
+import { isFunction } from '../../shared/is'
 import { reactify } from '../reactify'
 
 /**
@@ -22,7 +23,7 @@ export const reactifyObject = (obj, optionsOrKeys = {}) => {
 			return [
 				key,
 				// 将对象上所有的函数转换为解除 ref 参数的函数
-				typeof value === 'function'
+				isFunction(value)
 					? reactify(value.bind(obj))
 					: value
 			]

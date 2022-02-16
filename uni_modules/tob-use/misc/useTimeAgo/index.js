@@ -1,4 +1,9 @@
 import { computed, unref } from 'vue'
+import {
+	isFunction,
+	isNumber,
+	isString
+} from '../../shared/is'
 
 const UNITS = [
 	{ max: 60000, value: 1000, name: 'second' },
@@ -71,10 +76,10 @@ export const useTimeAgo = (time, options = {}) => {
 		// less than a minute
 		if (absDiff < 60000) return messages.justNow
 
-		if (typeof max === 'number' && absDiff > max)
+		if (isNumber(max) && absDiff > max)
 			return fullDateFormatter(new Date(from))
 
-		if (typeof max === 'string') {
+		if (isString(max)) {
 			const unitMax = UNITS.find(i => i.name === max)?.max
 			if (unitMax && absDiff > unitMax)
 				return fullDateFormatter(new Date(from))
@@ -87,8 +92,7 @@ export const useTimeAgo = (time, options = {}) => {
 
 	function applyFormat(name, val, isPast) {
 		const formatter = messages[name]
-		if (typeof formatter === 'function')
-			return formatter(val, isPast)
+		if (isFunction(formatter)) return formatter(val, isPast)
 		return formatter.replace('{0}', val.toString())
 	}
 
