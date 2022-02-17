@@ -1,8 +1,8 @@
 import {
-	computed,
-	getCurrentInstance,
 	ref,
-	watch
+	watch,
+	computed,
+	getCurrentInstance
 } from 'vue-demi'
 
 /**
@@ -15,23 +15,25 @@ export const useVModel = (
 	options = {}
 ) => {
 	const {
-		passive = false,
 		eventName,
-		deep = false
+		deep = false,
+		passive = false
 	} = options
+
 	const vm = getCurrentInstance()
 
+	// 获取 emit
 	const _emit = emit || vm?.emit || vm?.$emit?.bind(vm)
-	let event = eventName
 
 	if (!key) {
 		key = 'modelValue'
 	}
 
-	event = eventName || event || `update:${key}`
+	// 获取事件名
+	let event = eventName || `update:${key}`
 
 	if (passive) {
-		const proxy = ref < P[K] > props[key]
+		const proxy = ref(props[key])
 
 		watch(
 			() => props[key],
