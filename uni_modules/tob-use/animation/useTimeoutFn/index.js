@@ -9,35 +9,40 @@ export const useTimeoutFn = (
 	interval,
 	options = {}
 ) => {
-	const { immediate = true } = options
+	const {
+		immediate = true // 立即开始
+	} = options
 
 	const isPending = ref(false)
 
 	let timer = null
 
-	function clear() {
+	// 清除定时器
+	const clear = () => {
 		if (timer) {
 			clearTimeout(timer)
 			timer = null
 		}
 	}
 
-	function stop() {
+	// 暂停
+	const stop = () => {
 		isPending.value = false
 		clear()
 	}
 
-	function start(...args) {
+	// 启动
+	const start = (...args) => {
 		clear()
 		isPending.value = true
 		timer = setTimeout(() => {
 			isPending.value = false
 			timer = null
-			// eslint-disable-next-line n/no-callback-literal
 			cb(...args)
 		}, unref(interval))
 	}
 
+	// 立即开始
 	if (immediate) {
 		isPending.value = true
 		start()
