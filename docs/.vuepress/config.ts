@@ -35,7 +35,15 @@ export default defineUserConfig({
 				text: 'GitHub',
 				link: 'https://github.com/name/repo'
 			}
-		]
+		],
+		sidebar: {
+			'/guide/': [
+				{
+					text: '指南',
+					children: ['/guide/index.md', '/guide/start.md']
+				}
+			]
+		}
 	},
 	theme: resolve(__dirname, './theme/index.ts'),
 	alias: {
