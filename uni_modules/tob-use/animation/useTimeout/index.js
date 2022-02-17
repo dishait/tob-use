@@ -13,8 +13,10 @@ export const useTimeout = (
 
 	const controls = useTimeoutFn(noop, interval, options)
 
+	// 定时器触发完成标志
 	const ready = computed(() => !controls.isPending.value)
 
+	// 暴露定时器控制权
 	if (exposeControls) {
 		return {
 			ready,
