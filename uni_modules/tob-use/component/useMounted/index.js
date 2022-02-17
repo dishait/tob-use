@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
 /**
- * 挂载后
+ * 使用被挂载后状态
  */
 export const useMounted = () => {
 	const isMounted = ref(false)
