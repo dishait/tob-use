@@ -7,7 +7,8 @@ export const watchOnce = (source, cb, options = {}) => {
 	const stop = watch(
 		source,
 		(...args) => {
-			nextTick(() => stop())
+			// 触发后直接 stop 掉监听
+			nextTick(stop)
 			return cb(...args)
 		},
 		options
