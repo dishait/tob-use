@@ -7,15 +7,14 @@ import { promiseTimeout } from '../../shared/base'
 export const until = r => {
 	let isNot = false
 
-	function toMatch(
-		condition,
-		{
-			flush = 'sync',
-			deep = false,
+	// 匹配，接收回调 condition，返回 false 即不匹配
+	const toMatch = (condition, options = {}) => {
+		let {
 			timeout,
+			deep = false,
+			flush = 'sync',
 			throwOnTimeout
-		} = {}
-	) {
+		} = options
 		let stop = null
 		const watcher = new Promise(resolve => {
 			stop = watch(
@@ -38,9 +37,7 @@ export const until = r => {
 		if (timeout) {
 			promises.push(
 				promiseTimeout(timeout, throwOnTimeout).finally(
-					() => {
-						stop?.()
-					}
+					() => stop?.()
 				)
 			)
 		}
@@ -48,27 +45,25 @@ export const until = r => {
 		return Promise.race(promises)
 	}
 
-	function toBe(value, options) {
-		return toMatch(v => v === unref(value), options)
-	}
+	// 是否为 第一参数 value
+	const toBe = (value, options) =>
+		toMatch(v => v === unref(value), options)
 
-	function toBeTruthy(options) {
-		return toMatch(v => Boolean(v), options)
-	}
+	// 是否为 truthy
+	const toBeTruthy = options =>
+		toMatch(v => Boolean(v), options)
 
-	function toBeNull(options) {
-		return toBe(null, options)
-	}
+	// 是否为 null
+	const toBeNull = options => toBe(null, options)
 
-	function toBeUndefined(options) {
-		return toBe(undefined, options)
-	}
+	// 是否未定义
+	const toBeUndefined = options => toBe(undefined, options)
 
-	function toBeNaN(options) {
-		return toMatch(Number.isNaN, options)
-	}
+	// 是否为 NaN
+	const toBeNaN = options => toMatch(Number.isNaN, options)
 
-	function toContains(value, options) {
+	// 是否为指定类数组内的值
+	const toContains = (value, options) => {
 		return toMatch(v => {
 			const array = Array.from(v)
 			return (
@@ -78,12 +73,12 @@ export const until = r => {
 		}, options)
 	}
 
-	function changed(options) {
-		return changedTimes(1, options)
-	}
+	// 是否变更了
+	const changed = options => changedTimes(1, options)
 
-	function changedTimes(n = 1, options) {
-		let count = -1 // skip the immediate check
+	// 是否变更了 n 次
+	const changedTimes = (n = 1, options) => {
+		let count = -1
 		return toMatch(() => {
 			count += 1
 			return count >= n
