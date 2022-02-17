@@ -4,11 +4,6 @@
     --c-text-lightest: #3c3c3cb3;
 }
 
-// 解决与 windicss 的冲突
-.logo {
-    display: inline-block;
-}
-
 // 进度条颜色
 #nprogress {
     --nprogress-color: #187391;
