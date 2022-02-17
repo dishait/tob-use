@@ -13,9 +13,10 @@ export const watchAtMost = (source, cb, options = {}) => {
 		source,
 		(...args) => {
 			current.value += 1
-			if (current.value >= unref(count))
-				nextTick(() => stop())
-			// eslint-disable-next-line n/no-callback-literal
+			// 到达指定次数后暂停副作用并触发回调
+			if (current.value >= unref(count)) {
+				nextTick(stop)
+			}
 			cb(...args)
 		},
 		watchOptions
