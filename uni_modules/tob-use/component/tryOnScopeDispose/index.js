@@ -1,7 +1,7 @@
 import { getCurrentScope, onScopeDispose } from 'vue'
 
 /**
- * 尝试获取区域内副作用暂停
+ * 在副作用作用域被 stop 时，触发回调
  */
 export const tryOnScopeDispose = fn => {
 	if (getCurrentScope()) {
