@@ -1,5 +1,5 @@
 import { defineClientAppEnhance } from '@vuepress/client'
-// import 'virtual:windi-base.css'
+
 import 'virtual:windi-components.css'
 
 // 你自定义的 css

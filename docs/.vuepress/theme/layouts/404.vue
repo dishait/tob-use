@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "virtual:windi-base.css"
 import { init } from 'ityped'
 
 const content = ref<null | Element>(null)
@@ -19,7 +20,7 @@ const back = () => router.push('/')
             <button
                 @click="back"
                 active="scale-90 transform"
-                class="rounded-lg transition btn"
+                class="rounded-lg outline-none transition btn"
             >👉 Go Home</button>
         </div>
 

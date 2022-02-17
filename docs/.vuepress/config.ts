@@ -24,6 +24,10 @@ export default defineUserConfig({
 				link: '/guide/'
 			},
 			{
+				text: 'API 参考',
+				link: '/api/utilities'
+			},
+			{
 				text: '关于',
 				link: '/about/'
 			},
