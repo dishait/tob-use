@@ -14,12 +14,14 @@ export const useInterval = (
 	} = options
 
 	const counter = ref(0)
+	// 调用间隔循环函数
 	const controls = useIntervalFn(
 		() => (counter.value += 1),
 		interval,
 		{ immediate }
 	)
 
+	// 暴露控制权
 	if (exposeControls) {
 		return {
 			counter,

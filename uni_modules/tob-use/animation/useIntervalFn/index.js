@@ -2,7 +2,7 @@ import { isRef, ref, unref, watch } from 'vue'
 import { tryOnScopeDispose } from '../../component/tryOnScopeDispose'
 
 /**
- * 使用间隔函数
+ * 间隔循环函数
  */
 export const useIntervalFn = (
 	cb,
