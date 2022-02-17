@@ -1,9 +1,9 @@
 import { getCurrentScope, onScopeDispose } from 'vue'
 
 /**
- * 尝试获取区域内的副作用
+ * 尝试获取区域内副作用暂停
  */
-export const tryOnScopeDispose = () => {
+export const tryOnScopeDispose = fn => {
 	if (getCurrentScope()) {
 		onScopeDispose(fn)
 		return true
