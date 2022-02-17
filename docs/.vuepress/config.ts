@@ -12,6 +12,9 @@ import Inspect from 'vite-plugin-inspect'
 export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'tob-use',
+	head: [
+		['link', { rel: 'icon', href: '/images/logo.svg' }]
+	],
 	description: '基于 vuepress 的文档模板',
 	themeConfig: {
 		logo: '/images/logo.svg',
