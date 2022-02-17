@@ -1,10 +1,10 @@
-// 动画相关
+// 动画相关 4
 export { useInterval } from './animation/useInterval'
 export { useIntervalFn } from './animation/useIntervalFn'
 export { useTimeout } from './animation/useTimeout'
 export { useTimeoutFn } from './animation/useTimeoutFn'
 
-// 组件相关
+// 组件相关 9
 export { computedInject } from './component/computedInject'
 export { tryOnBeforeUnmount } from './component/tryOnBeforeUnmount'
 export { tryOnMounted } from './component/tryOnMounted'
@@ -15,10 +15,7 @@ export { useTemplateRefsList } from './component/useTemplateRefsList'
 export { useVModel } from './component/useVModel'
 export { useVModels } from './component/useVModels'
 
-// 杂项
-export { useTimeAgo } from './misc/useTimeAgo'
-
-// 工具
+// 工具 40
 export { and } from './utilities/and'
 export { asyncComputed } from './utilities/asyncComputed'
 export { autoResetRef } from './utilities/autoResetRef'
@@ -60,7 +57,7 @@ export { useThrottle } from './utilities/useThrottle'
 export { useThrottleFn } from './utilities/useThrottleFn'
 export { useToggle } from './utilities/useToggle'
 
-// 监听相关
+// 监听相关 9
 export { debouncedWatch } from './watch/debouncedWatch'
 export { ignorableWatch } from './watch/ignorableWatch'
 export { pausableWatch } from './watch/pausableWatch'

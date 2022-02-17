@@ -2,13 +2,13 @@
 	"id": "tob-use",
 	"displayName": "tob-use",
 	"version": "0.0.1",
-	"description": "uniapp的use库",
+	"description": "uniapp 的高效 use 库",
 	"keywords": [
-        "tob-use",
-        "use",
-        "hooks",
-        "hook"
-    ],
+		"tob-use",
+		"use",
+		"hooks",
+		"hook"
+	],
 	"repository": "",
 	"engines": {
 		"HBuilderX": "^3.1.0"

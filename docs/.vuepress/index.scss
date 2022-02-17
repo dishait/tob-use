@@ -1,0 +1,134 @@
+:root {
+    --c-brand: rgb(66, 184, 131); // 主色调
+    --c-brand-light: rgb(47, 202, 133); // 主色调(高亮)
+    --c-text-lightest: #3c3c3cb3;
+}
+
+// 解决与 windicss 的冲突
+.logo {
+    display: inline-block;
+}
+
+// 进度条颜色
+#nprogress {
+    --nprogress-color: #187391;
+}
+
+/*
+    * 回到顶部
+    */
+.back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4rem !important;
+    width: 2.4rem !important;
+    border-radius: 100%;
+    mask: none !important;
+    -webkit-mask: none !important;
+    background-color: white !important;
+    --tw-shadow-color: 8, 145, 178;
+    --tw-shadow: 0 4px 6px -1px rgba(var(--tw-shadow-color), 0.1),
+        0 2px 4px -1px rgba(var(--tw-shadow-color), 0.06);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, var(--tw-shadow);
+}
+
+/*
+* 回到顶部(暗黑模式)
+*/
+.dark .back-to-top {
+    background-color: #8094a8 !important;
+}
+
+/*
+* 回到顶部内容
+*/
+.back-to-top::after {
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 100%;
+    background-image: url('/images/back-to-top.svg');
+}
+
+/*
+* 全局滚动条
+*/
+::-webkit-scrollbar {
+    width: 7px;
+    background-color: rgb(246, 247, 248);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(229, 231, 235);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/*
+* 全局滚动条(暗黑模式)
+*/
+html.dark ::-webkit-scrollbar,
+html.dark ::-webkit-scrollbar-track {
+    background-color: #212529;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background-color: #343a40;
+}
+
+/*
+* 侧边栏滚动条
+*/
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgb(229, 231, 235);
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+/*
+* 首页标题
+*/
+#main-title {
+    font-size: 3.5rem;
+}
+
+.description {
+    font-weight: 300 !important;
+    font-size: 2rem !important;
+    margin-bottom: 30px !important;
+}
+
+/*
+* 首页按钮
+*/
+.action-button {
+    font-weight: 600;
+    font-size: 16px !important;
+    padding: 8px 18px !important;
+    border-radius: 6px !important;
+    border: 0 !important;
+}
+
+.action-button.secondary {
+    color: #476582 !important;
+    background-color: #f1f1f1 !important;
+}
+
+.action-button.secondary:hover {
+    background-color: #e5e5e5 !important;
+}
+
+.feature {
+    margin-bottom: 30px;
+}
