@@ -8,6 +8,10 @@ import {
 } from 'unplugin-vue-components/resolvers'
 import WindiCSS from 'vite-plugin-windicss'
 import Inspect from 'vite-plugin-inspect'
+import { generateApiRoutes } from './theme/shared'
+
+const { watch, animation, component, utilities } =
+	generateApiRoutes()
 
 export default defineUserConfig({
 	lang: 'zh-CN',
@@ -25,7 +29,7 @@ export default defineUserConfig({
 			},
 			{
 				text: 'API 参考',
-				link: '/api/utilities/'
+				link: utilities[0]
 			},
 			{
 				text: '关于',
@@ -49,7 +53,25 @@ export default defineUserConfig({
 			],
 			'/api/': [
 				{
-					text: 'API 参考'
+					text: 'API 参考',
+					children: [
+						{
+							text: '工具',
+							children: utilities
+						},
+						{
+							text: '监听',
+							children: watch
+						},
+						{
+							text: '组件',
+							children: component
+						},
+						{
+							text: '动画',
+							children: animation
+						}
+					]
 				}
 			]
 		}

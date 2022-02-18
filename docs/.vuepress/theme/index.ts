@@ -23,6 +23,7 @@ const theme: ThemeObject = {
 			ignoreInitial: true
 		})
 
+		// 自动生成硬链接文档
 		watcher.on('all', (event, srcPath) => {
 			const name = showName(srcPath)
 			// 跳过根目录下的文件
@@ -42,6 +43,7 @@ const theme: ThemeObject = {
 			// 删除时，unlink 掉硬链接
 			if (isUnlink(event)) {
 				unlinkSync(targetPath)
+				touch(resolve(__dirname, '../config.ts'))
 			}
 		})
 
