@@ -4,7 +4,6 @@
   "description": "uniapp 的高效 use 库",
   "main": "uni_modules/tob-less/index.js",
   "scripts": {
-    "auto:sync": "node scripts/sync.js",
     "auto:create": "node scripts/create.js",
     "auto:remove": "node scripts/remove.js",
     "docs:dev": "vuepress dev docs",
