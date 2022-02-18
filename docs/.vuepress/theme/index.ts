@@ -26,13 +26,17 @@ const theme: ThemeObject = {
 			}
 		})
 	},
-	onWatched(app, watchers) {
-		const watcher = watch('./uni_modules/tob-use/**/*.md', {
-			ignoreInitial: true
-		})
+	onWatched(app, watchers, restart) {
+		// 更新 api 监听器
+		const flushApiWatcher = watch(
+			'./uni_modules/tob-use/**/*.md',
+			{
+				ignoreInitial: true
+			}
+		)
 
 		// 自动生成硬链接文档
-		watcher.on('all', (event, srcPath) => {
+		flushApiWatcher.on('all', (event, srcPath) => {
 			const name = showName(srcPath)
 			// 跳过根目录下的文件
 			if (shouldSkip('tob-use', name)) {
@@ -55,7 +59,18 @@ const theme: ThemeObject = {
 			}
 		})
 
-		watchers.push(watcher)
+		// 主题监听器
+		const themeWatcher = watch(
+			resolve(__dirname, './index.ts'),
+			{
+				ignoreInitial: true
+			}
+		)
+
+		// 变更时重启
+		themeWatcher.on('change', restart)
+
+		watchers.push(themeWatcher, flushApiWatcher)
 	}
 }
 
