@@ -31,6 +31,8 @@
     "@vuepress/plugin-register-components": "^2.0.0-beta.35",
     "@vuepress/plugin-search": "^2.0.0-beta.35",
     "@vueuse/core": "^7.5.5",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^10.0.0",
     "ityped": "^1.0.3",
     "less": "^4.1.2",
     "postcss-windicss": "^1.0.0",

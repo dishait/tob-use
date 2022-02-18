@@ -25,7 +25,7 @@ export default defineUserConfig({
 			},
 			{
 				text: 'API 参考',
-				link: '/api/utilities'
+				link: '/api/utilities/'
 			},
 			{
 				text: '关于',
@@ -45,6 +45,11 @@ export default defineUserConfig({
 				{
 					text: '指南',
 					children: ['/guide/index.md', '/guide/start.md']
+				}
+			],
+			'/api/': [
+				{
+					text: 'API 参考'
 				}
 			]
 		}
