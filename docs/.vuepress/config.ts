@@ -37,11 +37,11 @@ export default defineUserConfig({
 			},
 			{
 				text: 'Gitee',
-				link: 'https://github.com/name/repo'
+				link: 'https://gitee.com/dishait/tob-use'
 			},
 			{
 				text: 'GitHub',
-				link: 'https://github.com/name/repo'
+				link: 'https://github.com/dishait/tob-use'
 			}
 		],
 		sidebar: {
