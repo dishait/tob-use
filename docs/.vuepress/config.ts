@@ -51,6 +51,11 @@ export default defineUserConfig({
 					children: ['/guide/index.md', '/guide/start.md']
 				}
 			],
+			'/about/': [
+				{
+					children: ['/about/index.md']
+				}
+			],
 			'/api/': [
 				{
 					text: 'API 参考',
