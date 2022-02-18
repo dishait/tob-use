@@ -10,8 +10,8 @@
 }
 
 /*
-    * 回到顶部
-    */
+* 回到顶部
+*/
 .back-to-top {
     display: flex;
     align-items: center;
@@ -52,16 +52,24 @@
 */
 ::-webkit-scrollbar {
     width: 7px;
-    background-color: rgb(246, 247, 248);
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgb(229, 231, 235);
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
+}
+
+@media screen and (min-width: 720px) {
+    ::-webkit-scrollbar {
+        background-color: rgb(246, 247, 248);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(229, 231, 235);
+    }
 }
 
 /*
