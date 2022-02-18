@@ -18,6 +18,14 @@ const theme: ThemeObject = {
 	layouts: {
 		'404': resolve(__dirname, './layouts/404.vue')
 	},
+	onInitialized(app) {
+		// 修改 api 文档的侧边栏层级
+		app.pages.forEach(page => {
+			if (/^\/api\/.+\.html$/.test(page.pathInferred)) {
+				page.frontmatter.sidebarDepth = 0
+			}
+		})
+	},
 	onWatched(app, watchers) {
 		const watcher = watch('./uni_modules/tob-use/**/*.md', {
 			ignoreInitial: true
