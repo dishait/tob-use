@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import "virtual:windi-base.css"
 import { init } from 'ityped'
 
 const content = ref<null | Element>(null)
@@ -17,11 +16,11 @@ const back = () => router.push('/')
         <div class="font-blod desc">
             <div class="text-7xl code">404</div>
             <div class="text-3xl content" ref="content">The Page</div>
-            <button
+            <div
                 @click="back"
                 active="scale-90 transform"
-                class="rounded-lg outline-none transition btn"
-            >👉 Go Home</button>
+                class="rounded-lg cursor-pointer transition inline-block btn"
+            >👉 Go Home</div>
         </div>
 
         <img src="/404/33.svg" class="cover" alt="page not found" />
