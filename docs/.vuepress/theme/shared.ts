@@ -12,14 +12,6 @@ export const touch = (path: string) => {
 	}
 }
 
-export const isAdd = (event: string) => event === 'add'
-
-export const isChange = (event: string) =>
-	event === 'change'
-
-export const isUnlink = (event: string) =>
-	event === 'unlink'
-
 export const showName = (path: string) => {
 	return basename(dirname(path))
 }
@@ -28,11 +20,17 @@ export const showType = (path: string) => {
 	return basename(dirname(dirname(path)))
 }
 
-export const shouldSkip = (
-	codition: string,
-	name: string
-) => {
-	return name === codition
+export const useDest = (path: string) => {
+	const name = showName(path)
+	// 跳过根目录下的文件
+	const skip = name === 'tob-use'
+	if (skip) {
+		return { skip: true }
+	}
+	const type = showType(path)
+	const dest = `./docs/api/${type}/${name}.md`
+
+	return { dest, type, name }
 }
 
 interface Routes {
@@ -43,16 +41,15 @@ interface Routes {
 export const generateApiRoutes = (): Routes => {
 	const srcPaths = sync(`./uni_modules/tob-use/**/*.md`)
 	const routes: Routes = {}
-	srcPaths.forEach(srcPath => {
-		const name = showName(srcPath)
-		if (shouldSkip('tob-use', name)) {
+	srcPaths.forEach(src => {
+		const { dest, type, skip, name } = useDest(src)
+
+		if (skip) {
 			return
 		}
-		const type = showType(srcPath)
-		const targetPath = `./docs/api/${type}/${name}.md`
 
 		// 补充硬链接的更新
-		ensureLinkSync(srcPath, targetPath)
+		ensureLinkSync(src, dest)
 
 		let sidebar = routes[type]
 		if (!sidebar) {

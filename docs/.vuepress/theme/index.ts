@@ -1,16 +1,8 @@
 import { resolve } from 'path'
 import { watch } from 'chokidar'
 import { ThemeObject } from 'vuepress'
-import { ensureLinkSync, unlinkSync } from 'fs-extra'
-import {
-	touch,
-	isAdd,
-	isChange,
-	isUnlink,
-	showName,
-	showType,
-	shouldSkip
-} from './shared'
+import { ensureLinkSync, remove } from 'fs-extra'
+import { touch, useDest } from './shared'
 
 const theme: ThemeObject = {
 	name: 'docs',
@@ -35,28 +27,31 @@ const theme: ThemeObject = {
 			}
 		)
 
-		// 自动生成硬链接文档
-		flushApiWatcher.on('all', (event, srcPath) => {
-			const name = showName(srcPath)
-			// 跳过根目录下的文件
-			if (shouldSkip('tob-use', name)) {
+		flushApiWatcher.on('change', src => {
+			const { dest, skip } = useDest(src)
+			if (skip) {
 				return
 			}
-			const type = showType(srcPath)
-			const targetPath = `./docs/api/${type}/${name}.md`
-			// 新增时，补充硬链接
-			if (isAdd(event)) {
-				ensureLinkSync(srcPath, targetPath)
+			touch(dest)
+		})
+
+		flushApiWatcher.once('add', src => {
+			const { skip } = useDest(src)
+			if (skip) {
+				return
 			}
-			// 变更时，更新时触发硬链接 hmr
-			if (isChange(event)) {
-				touch(targetPath)
+			restart()
+		})
+
+		flushApiWatcher.once('unlink', src => {
+			const { dest, skip } = useDest(src)
+
+			if (skip) {
+				return
 			}
-			// 删除时，unlink 掉硬链接
-			if (isUnlink(event)) {
-				unlinkSync(targetPath)
-				touch(resolve(__dirname, '../config.ts'))
-			}
+
+			remove(dest)
+			restart()
 		})
 
 		// 主题监听器
