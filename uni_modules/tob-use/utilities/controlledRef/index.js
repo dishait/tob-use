@@ -2,7 +2,7 @@ import { customRef } from 'vue'
 import { extendRef } from '../extendRef'
 
 /**
- * 控制型ref
+ * 受控型 ref
  */
 export const controlledRef = (initial, options = {}) => {
 	let source = initial

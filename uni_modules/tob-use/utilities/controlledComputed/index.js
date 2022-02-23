@@ -1,7 +1,7 @@
 import { ref, customRef } from 'vue'
 
 /**
- * 控制型计算属性
+ * 受控型计算属性
  */
 export const controlledComputed = (source, fn) => {
 	let v

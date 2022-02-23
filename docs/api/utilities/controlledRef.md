@@ -1,6 +1,6 @@
 # controlledRef
 
-控制型ref
+受控型 ref
 
 ## Usage
 
