@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { watch } from 'chokidar'
+import { remove } from 'fs-extra'
 import { ThemeObject } from 'vuepress'
-import { ensureLinkSync, remove } from 'fs-extra'
 import { touch, useDest } from './shared'
 
 const theme: ThemeObject = {

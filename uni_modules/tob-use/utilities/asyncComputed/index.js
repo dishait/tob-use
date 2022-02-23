@@ -53,7 +53,7 @@ export const asyncComputed = (
 			)
 
 			// 当计算器与当前的调用相同时才允许更新
-			// 防止多次调用异步触发无效的更新
+			// 防止多次调用异步触发重复的更新
 			const shouldUpdate = counterAtBeginning === counter
 			if (shouldUpdate) {
 				current.value = result
@@ -70,7 +70,7 @@ export const asyncComputed = (
 		}
 	})
 
-	// lazy 选项开启时，使用计算属性缓存计算结果
+	// lazy 选项开启时，将在第一次 getter 访问时触发
 	if (lazy) {
 		return computed(() => {
 			started.value = true
