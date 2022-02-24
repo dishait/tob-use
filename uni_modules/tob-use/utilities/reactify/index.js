@@ -1,7 +1,7 @@
 import { computed, unref } from 'vue'
 
 /**
- * 响应式转换
+ * 将普通函数转换为响应式函数
  */
 export const reactify = fn => {
 	return function (...args) {
