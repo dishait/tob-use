@@ -1,13 +1,12 @@
 # createReactiveFn
 
-创建响应式函数
+将普通函数转换为响应式函数。
 
 ## Usage
 
-```js
-import { ref } from 'vue'
-import { createReactiveFn } from '@/uni_modules/tob-use/index.js'
+[reactify](/api/utilities/reactify) 的别名，具体可见 👉 [reactify](/api/utilities/reactify)。
 
-
+```ts
+export { reactify as createReactiveFn } from '../reactify'
 ```
 
