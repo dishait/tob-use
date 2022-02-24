@@ -1,7 +1,7 @@
 import { unref } from 'vue'
 
 /**
- * 创建 unref 函数
+ * 创建解 ref 函数
  */
 export const createUnrefFn = fn => {
 	return function (...args) {
