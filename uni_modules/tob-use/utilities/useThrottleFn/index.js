@@ -9,8 +9,8 @@ import {
 export const useThrottleFn = (
 	fn,
 	ms = 200,
-	leading = true,
-	trailing = true
+	trailing = true,
+	leading = true
 ) => {
 	return createFilterWrapper(
 		throttleFilter(ms, trailing, leading),

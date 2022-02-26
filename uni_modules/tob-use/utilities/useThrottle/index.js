@@ -7,8 +7,8 @@ import { useThrottleFn } from '../useThrottleFn'
 export const useThrottle = (
 	value,
 	delay = 200,
-	leading = true,
-	trailing = true
+	trailing = true,
+	leading = true
 ) => {
 	if (delay <= 0) {
 		return value
