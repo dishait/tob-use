@@ -8,6 +8,9 @@
 import { ref } from 'vue'
 import { or } from '@/uni_modules/tob-use/index.js'
 
+const a = ref(true)
+const b = ref(false)
 
+console.log(or(a, b)) // true
 ```
 
