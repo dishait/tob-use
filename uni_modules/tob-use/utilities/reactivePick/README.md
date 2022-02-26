@@ -1,6 +1,6 @@
 # reactivePick
 
-响应式的pick
+响应式的 pick
 
 ## Usage
 
@@ -8,6 +8,13 @@
 import { ref } from 'vue'
 import { reactivePick } from '@/uni_modules/tob-use/index.js'
 
+const obj = reactive({
+  x: 0,
+  y: 0,
+  elementX: 0,
+  elementY: 0,
+})
 
+const picked = reactivePick(obj, 'x', 'elementX') // { x: 0, elementX: 0 }
 ```
 
