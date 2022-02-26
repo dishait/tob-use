@@ -1,5 +1,5 @@
-import { isFunction } from '../../shared/is'
 import { reactify } from '../reactify'
+import { isFunction } from '../../shared/is'
 
 /**
  * 对象的响应式转换
