@@ -1,6 +1,6 @@
 # isDefined
 
-是否定义
+是否定义判断
 
 ## Usage
 
@@ -8,6 +8,12 @@
 import { ref } from 'vue'
 import { isDefined } from '@/uni_modules/tob-use/index.js'
 
+const example = ref(undefined)
 
+if (isDefined(example)) {
+    console.log("定义了")
+} else {
+    console.log("未定义") // 将输出 '未定义'
+}
 ```
 
