@@ -2,7 +2,7 @@ import { ref, watch } from 'vue'
 import { useThrottleFn } from '../useThrottleFn'
 
 /**
- * 使用节流
+ * 使用节流 ref
  */
 export const useThrottle = (
 	value,
