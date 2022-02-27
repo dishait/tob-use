@@ -33,9 +33,7 @@ export const useMemoize = (resolver, options) => {
 	}
 
 	// 清空数据
-	const clearData = () => {
-		cache.clear()
-	}
+	const clearData = () => cache.clear()
 
 	// 记忆函数 (有缓存时走缓存)
 	const memoized = (...args) => {
