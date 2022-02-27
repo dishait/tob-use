@@ -22,10 +22,10 @@ export const useOffsetPagination = (options = {}) => {
 		onPageCountChange = noop
 	} = options
 
-	// 当前总页数
+	// 当前每页元素数量
 	const currentPageSize = useClamp(pageSize, 1, Infinity)
 
-	// 每页的元素数量
+	// 总页数
 	const pageCount = computed(() =>
 		Math.ceil(unref(total) / unref(currentPageSize))
 	)
@@ -43,12 +43,12 @@ export const useOffsetPagination = (options = {}) => {
 		() => currentPage.value === pageCount.value
 	)
 
-	// 同步当前第几页
+	// 同步 第几页
 	if (isRef(page)) {
 		biSyncRef(page, currentPage)
 	}
 
-	// 同步当前总页数
+	// 同步 每页元素数量
 	if (isRef(pageSize)) {
 		biSyncRef(pageSize, currentPageSize)
 	}
@@ -74,12 +74,12 @@ export const useOffsetPagination = (options = {}) => {
 		onPageChange(reactive(returnValue))
 	})
 
-	// 当前总页数变化时，触发 onPageSizeChange
+	// 当前每页元素数量变化时，触发 onPageSizeChange
 	watch(currentPageSize, () => {
 		onPageSizeChange(reactive(returnValue))
 	})
 
-	// 每页的元素数量变化时，触发 onPageCountChange
+	// 总页数变化时，触发 onPageCountChange
 	watch(pageCount, () => {
 		onPageCountChange(reactive(returnValue))
 	})
