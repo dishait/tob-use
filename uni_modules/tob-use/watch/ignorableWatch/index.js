@@ -18,9 +18,9 @@ export const ignorableWatch = (
 
 	const filteredCb = createFilterWrapper(eventFilter, cb)
 
+	let stop
 	let ignoreUpdates
 	let ignorePrevAsyncUpdates
-	let stop
 
 	const syncFlush = watchOptions.flush === 'sync'
 	if (syncFlush) {
@@ -43,18 +43,18 @@ export const ignorableWatch = (
 			watchOptions
 		)
 	} else {
-		// 一次性数组，用来存储 watch 之后的 stop
+		// 临时数组，用来存储 watch 之后的 stop
 		const disposables = []
 
-		const ignoreCounter = ref(0)
-		const syncCounter = ref(0)
+		const syncCounter = ref(0) // 同步计数器
+		const ignoreCounter = ref(0) // 忽略计数器
 
 		// 忽略上一次同步更新（使得忽略计数器与同步计数器相同）
 		ignorePrevAsyncUpdates = () => {
 			ignoreCounter.value = syncCounter.value
 		}
 
-		// 收集同步计数器更新（监听源更新，递增同步计数器）
+		// 监听源更新，递增同步计数器，并收集其 stop
 		disposables.push(
 			watch(
 				source,
@@ -75,11 +75,11 @@ export const ignorableWatch = (
 
 		// 重置所有计数器
 		const resetAllCounter = () => {
-			ignoreCounter.value = 0
 			syncCounter.value = 0
+			ignoreCounter.value = 0
 		}
 
-		// 收集最终的忽略副作用
+		// 监听监听源更新，判断是否忽略副作用，并收集其 stop
 		disposables.push(
 			watch(
 				source,
