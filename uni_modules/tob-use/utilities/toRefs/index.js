@@ -1,7 +1,7 @@
 import { toRefs as _toRefs, customRef, isRef } from 'vue'
 
 /**
- * 扩展之后的toRefs，允许接受对象型的ref
+ * 扩展之后的 toRefs，允许接受对象型的 ref
  */
 export const toRefs = objectRef => {
 	if (!isRef(objectRef)) return _toRefs(objectRef)
