@@ -29,4 +29,4 @@ const { count, inc } = useCounter()
 </template>
 ```
 
-更多 `api` 可见 👉 [API 参考]()
+更多 `api` 可见 👉 [API 参考](/api/utilities/and)

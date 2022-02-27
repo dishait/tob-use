@@ -6,7 +6,7 @@ actions:
   - text: Get Started 👉
     link: /guide/
   - text: install
-    link: /guide/
+    link: /guide/start/
     type: secondary
 features:
   - title: 🦖 功能丰富
