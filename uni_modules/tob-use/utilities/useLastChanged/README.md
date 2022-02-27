@@ -51,9 +51,9 @@ import { useLastChanged } from '@/uni_modules/tob-use/index.js'
 const a = ref(0)
 
 const lastChanged = useLastChanged(a, {
-    deep: false, // 深度同步，默认为 false
-    immediate: true, // 立即同步，默认为 true
-    flush: 'sync', // 同步时机，支持 pre，post，sync，默认为 sync
+    deep: true, // 深度同步
+    immediate: true, // 立即同步，默认为 false
+    flush: 'sync', // 同步时机，支持 pre，post，sync，默认为 pre
 })
 
 ```
