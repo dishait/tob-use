@@ -37,7 +37,7 @@ setTimeout(() => {
 
 <br />
 
-### 失败时打断
+### 打断
 
 ```ts
 import { useAsyncQueue } from '@/uni_modules/tob-use/index.js'
