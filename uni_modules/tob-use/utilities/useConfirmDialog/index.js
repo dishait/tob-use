@@ -14,8 +14,8 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 
 	// 显示
 	const reveal = data => {
-		revealHook.trigger(data)
 		revealed.value = true
+		revealHook.trigger(data)
 
 		return new Promise(resolve => {
 			_resolve = resolve
@@ -34,6 +34,7 @@ export const useConfirmDialog = (revealed = ref(false)) => {
 	const cancel = data => {
 		revealed.value = false
 		cancelHook.trigger(data)
+
 		_resolve({ data, isCanceled: true })
 	}
 

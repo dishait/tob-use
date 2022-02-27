@@ -84,7 +84,8 @@ export default defineUserConfig({
 	theme: resolve(__dirname, './theme/index.ts'),
 	alias: {
 		'~': resolve(__dirname, '../'),
-		'~u': resolve(__dirname, './composables')
+		'~u': resolve(__dirname, './composables'),
+		'~m': resolve(__dirname, '../../uni_modules/tob-use')
 	},
 	plugins: [
 		[
