@@ -108,7 +108,9 @@ export default defineUserConfig({
 	bundlerConfig: {
 		viteOptions: {
 			plugins: [
-				Inspect(),
+				Inspect({
+					// enabled: false
+				}),
 				WindiCSS({
 					scan: {
 						dirs: [

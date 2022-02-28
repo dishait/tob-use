@@ -135,7 +135,7 @@
   resolved "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@*", "@types/node@^17.0.14", "@types/node@^17.0.8":
+"@types/node@*", "@types/node@^17.0.21", "@types/node@^17.0.8":
   version "17.0.21"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
@@ -1214,7 +1214,7 @@ fraction.js@^4.1.2:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.1.3.tgz#be65b0f20762ef27e1e793860bc2dfb716e99e65"
   integrity sha512-pUHWWt6vHzZZiQJcM6S/0PXfS+g6FM4BF5rj9wZyreivhQPdsh5PpE25VtSNxq80wHS5RfY51Ii+8Z0Zl/pmzg==
 
-fs-extra@^10.0.0:
+fs-extra@^10.0.0, fs-extra@^10.0.1:
   version "10.0.1"
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-10.0.1.tgz#27de43b4320e833f6867cc044bfce29fdf0ef3b8"
   integrity sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==
@@ -2143,7 +2143,7 @@ uc.micro@^1.0.1, uc.micro@^1.0.5:
   resolved "https://registry.npmjs.org/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
   integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
 
-ufo@^0.7.10:
+ufo@^0.7.11:
   version "0.7.11"
   resolved "https://registry.npmjs.org/ufo/-/ufo-0.7.11.tgz#17defad497981290383c5d26357773431fdbadcb"
   integrity sha512-IT3q0lPvtkqQ8toHQN/BkOi4VIqoqheqM1FnkNWT9y0G8B3xJhwnoKBu5OHx8zHDOvveQzfKuFowJ0VSARiIDg==
@@ -2158,19 +2158,19 @@ universalify@^2.0.0:
   resolved "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
-unplugin-auto-import@^0.5.11:
-  version "0.5.11"
-  resolved "https://registry.npmjs.org/unplugin-auto-import/-/unplugin-auto-import-0.5.11.tgz#334768c734456bd802344547b839d7164ed8bd42"
-  integrity sha512-MJ3POLe/IysRHF4yd32FkKDoxqSRoiuIHm89ys67B8FLuz2Pvh9poeqTVe6IhJsNxwv0+GSdFfj5Dpq24lhm4g==
+unplugin-auto-import@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.npmjs.org/unplugin-auto-import/-/unplugin-auto-import-0.6.1.tgz#2c6fe2f76e9da7f274504e09634d498e59ed2f61"
+  integrity sha512-rSukyyROmSkqL9tjkA88oLhpG4tXYkk2rTpqGaYKjXRNktHEKf03pit8bamPt95KPVfMLjT0+TPKi6ju0toOIw==
   dependencies:
-    "@antfu/utils" "^0.4.0"
+    "@antfu/utils" "^0.5.0"
     "@rollup/pluginutils" "^4.1.2"
     local-pkg "^0.4.1"
     magic-string "^0.25.7"
-    resolve "^1.21.0"
-    unplugin "^0.3.0"
+    resolve "^1.22.0"
+    unplugin "^0.3.2"
 
-unplugin-vue-components@^0.17.15:
+unplugin-vue-components@^0.17.21:
   version "0.17.21"
   resolved "https://registry.npmjs.org/unplugin-vue-components/-/unplugin-vue-components-0.17.21.tgz#b4acdb389ef2dab90d974353e5310507865acc43"
   integrity sha512-jkXksUF6zkNbzHQbw1DdrsQyVoMZGESRZDIGd9x7nUP+65nHdpBCY/JmlxSjKbuTrOwfMsk6FQFa0RpRueOCKg==
@@ -2186,7 +2186,7 @@ unplugin-vue-components@^0.17.15:
     resolve "^1.21.0"
     unplugin "^0.3.0"
 
-unplugin@^0.3.0:
+unplugin@^0.3.0, unplugin@^0.3.2:
   version "0.3.2"
   resolved "https://registry.npmjs.org/unplugin/-/unplugin-0.3.2.tgz#5113b13b90df14f92e17ddafed9d465bb18d2ca6"
   integrity sha512-5d0DMYNKZU+S9eZUiBfw6Co32eRg8myUgBPoWSqG/wDFCUE/WznfSsJnZWi1P9l69x4uLJqt2qVq1xW/AsXFrw==
@@ -2203,18 +2203,18 @@ util-deprecate@^1.0.1:
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-vite-plugin-inspect@^0.3.13:
-  version "0.3.15"
-  resolved "https://registry.npmjs.org/vite-plugin-inspect/-/vite-plugin-inspect-0.3.15.tgz#a592bcd96947cb55ebe5ef3fd89fc7fdc1f0a4bb"
-  integrity sha512-WlAnh0L14jtQA3q6+6cbhU3+ZcOE5iOeNuyQqUAK/T3IKsv1PwDwpHUSWjpP25uBO0WTbw2zsY0R3Hpbtfw+AA==
+vite-plugin-inspect@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.npmjs.org/vite-plugin-inspect/-/vite-plugin-inspect-0.4.3.tgz#d048106c0aa24554d91bee0d524e94b1eba178fd"
+  integrity sha512-lj3oWnReRUwMHB7k8ZD8o6E27/OSn+8ua+tOftxuS39aM6Z9MG7m5r1CMlxMwEwdTM/wnQr0aH22Y2IX3e+++w==
   dependencies:
     "@rollup/pluginutils" "^4.1.2"
     debug "^4.3.3"
     kolorist "^1.5.1"
     sirv "^2.0.2"
-    ufo "^0.7.10"
+    ufo "^0.7.11"
 
-vite-plugin-windicss@^1.6.3:
+vite-plugin-windicss@^1.8.1:
   version "1.8.1"
   resolved "https://registry.npmjs.org/vite-plugin-windicss/-/vite-plugin-windicss-1.8.1.tgz#3dd3400dd3509bce67cb4f5109f310a268433c45"
   integrity sha512-c+900Dkc94kRuZPb6mz79B5XOS2PHNhadf7P9UjIRoimEE5HB7hj1f+A6qGHO4VejwU/MIvA6D5+Sz2lDKAaEQ==
@@ -2295,7 +2295,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^3.0.12, windicss@^3.4.3, windicss@^3.5.0:
+windicss@^3.0.12, windicss@^3.5.0:
   version "3.5.0"
   resolved "https://registry.npmjs.org/windicss/-/windicss-3.5.0.tgz#cb6896b136bc21d32d50a742352eece4ce0400d1"
   integrity sha512-+UNYm2Zy4TM2uLiz6bqY2a69LavMqGbILFIwuGhPEJ/uqsPT3kCGSaWlhMw/weIaFOkm1K1cEzZ015Y8pp8N1A==
