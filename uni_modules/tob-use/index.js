@@ -67,3 +67,9 @@ export { watchAtMost } from './watch/watchAtMost'
 export { watchOnce } from './watch/watchOnce'
 export { watchWithFilter } from './watch/watchWithFilter'
 export { whenever } from './watch/whenever'
+
+// shared
+export * from "./shared/is"
+export * from "./shared/base"
+export * from "./shared/create"
+export * from "./shared/filters"

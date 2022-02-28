@@ -138,7 +138,7 @@ export const createFilterWrapper = (filter, fn) => {
 export const bypassFilter = invoke => invoke()
 
 /**
- * 伴随过滤器的监听
+ * 带过滤器的监听
  */
 export const watchWithFilter = (
 	source,
