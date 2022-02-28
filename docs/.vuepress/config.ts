@@ -109,7 +109,7 @@ export default defineUserConfig({
 		viteOptions: {
 			plugins: [
 				Inspect({
-					// enabled: false
+					enabled: false
 				}),
 				WindiCSS({
 					scan: {
