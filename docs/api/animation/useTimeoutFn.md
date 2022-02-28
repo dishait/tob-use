@@ -4,10 +4,30 @@
 
 ## Usage
 
+### 基础
+
 ```js
-import { ref } from 'vue'
 import { useTimeoutFn } from '@/uni_modules/tob-use/index.js'
 
-
+const { 
+    stop, 
+    start, 
+    isPending,
+} = useTimeoutFn(() => {
+  // 你希望执行的函数
+}, 3000)
 ```
 
+<br />
+
+### 立即开始
+
+```js
+import { useTimeoutFn } from '@/uni_modules/tob-use/index.js'
+
+const instance = useTimeoutFn(() => {
+  // 你希望执行的函数
+}, 3000, {
+    immediate: false // 立即开始，默认为 true
+})
+```
