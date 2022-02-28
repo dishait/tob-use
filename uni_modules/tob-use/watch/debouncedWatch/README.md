@@ -18,7 +18,7 @@ const watchOptions = {
 
 const watchChanged = (newValue, oldValue) => console.log(oldValue, '->', newValue)
 
-debouncedWatch(source, watchChanged, watchOptions)
+const stop = debouncedWatch(source, watchChanged, watchOptions)
 
 source.value = 'new' // 500 毫秒后输出 old -> new 
 ```

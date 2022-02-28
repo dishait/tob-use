@@ -12,7 +12,7 @@ const source = ref(1)
 
 const changed = () => console.log('trigger!') 
 
-watchAtMost(
+const stop = watchAtMost(
   source,
   changed,
   {

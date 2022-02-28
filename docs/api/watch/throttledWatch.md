@@ -16,7 +16,7 @@ const watchOptions = {
 
 const watchChanged = (newValue, oldValue) => console.log(oldValue, '->', newValue)
 
-throttledWatch(source, watchChanged, watchOptions)
+const stop = throttledWatch(source, watchChanged, watchOptions)
 
 source.value = 'new'
 ```
