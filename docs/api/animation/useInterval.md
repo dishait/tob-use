@@ -54,6 +54,6 @@ const toggle = computed(() => isActive.value ? pause : resume)
 import { useInterval } from '@/uni_modules/tob-use/index.js'
 
 const counter = useInterval(200, { 
-    immediate: false // 立即执行，默认为 true
+    immediate: false // 立即开启，默认为 true
 })
 ```
