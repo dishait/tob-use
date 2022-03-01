@@ -3,6 +3,8 @@ import { dirname, basename } from 'path'
 import { ensureLinkSync } from 'fs-extra'
 import { utimesSync, openSync, closeSync } from 'fs'
 
+export const _DEV_ = process.env.NODE_ENV === 'development'
+
 export const touch = (path: string) => {
 	const time = new Date()
 	try {
@@ -49,7 +51,7 @@ export const generateApiRoutes = (): Routes => {
 		}
 
 		// 补充硬链接的更新
-		ensureLinkSync(src, dest)
+		_DEV_ && ensureLinkSync(src, dest)
 
 		let sidebar = routes[type]
 		if (!sidebar) {
