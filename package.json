@@ -2,20 +2,39 @@
   "name": "tob-use",
   "version": "1.0.0",
   "description": "uniapp 的高效 use 库",
-  "main": "uni_modules/tob-less/index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "scripts": {
+    "prepublishOnly": "yarn run build",
     "auto:create": "node scripts/create.js",
     "auto:remove": "node scripts/remove.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:dev:open": "vuepress dev docs --open"
+    "docs:dev:open": "vuepress dev docs --open",
+    "build": "vite build --config uni_modules/tob-use/vite.config.js",
+    "release": "bumpp --commit --push --tag && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dishait/tob-use.git"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "tob",
     "use",
     "vue3",
     "uniapp",
-    "reactivity"
+    "reactivity",
+    "composition-api"
   ],
   "author": {
     "name": "markthree",
@@ -30,6 +49,7 @@
     "@vuepress/plugin-register-components": "^2.0.0-beta.35",
     "@vuepress/plugin-search": "^2.0.0-beta.35",
     "@vueuse/core": "^7.7.0",
+    "bumpp": "^7.1.1",
     "chokidar": "^3.5.3",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
@@ -38,9 +58,13 @@
     "postcss-windicss": "^1.0.0",
     "unplugin-auto-import": "^0.6.1",
     "unplugin-vue-components": "^0.17.21",
+    "vite": "^2.8.5",
     "vite-plugin-inspect": "^0.4.3",
     "vite-plugin-windicss": "^1.8.1",
     "vuepress": "^2.0.0-beta.35",
     "windicss": "^3.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.31"
   }
 }
