@@ -1,6 +1,6 @@
 {
   "name": "tob-use",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "uniapp 的高效 use 库",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
@@ -25,8 +25,7 @@
     "url": "https://github.com/dishait/tob-use.git"
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "keywords": [
     "tob",
