@@ -3,14 +3,14 @@ import {
 	watch,
 	computed,
 	getCurrentInstance
-} from 'vue-demi'
+} from 'vue'
 
 /**
  * 使用 v-model
  */
 export const useVModel = (
 	props,
-	key,
+	key = 'modelValue',
 	emit,
 	options = {}
 ) => {
@@ -24,10 +24,6 @@ export const useVModel = (
 
 	// 获取 emit
 	const _emit = emit || vm?.emit || vm?.$emit?.bind(vm)
-
-	if (!key) {
-		key = 'modelValue'
-	}
 
 	// 获取事件名
 	let event = eventName || `update:${key}`
