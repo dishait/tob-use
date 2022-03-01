@@ -1,49 +1,15 @@
+<script setup>
+import { useInterval } from '@/uni_modules/tob-use'
+
+const { counter, pause, resume, isActive } = useInterval(200, {
+	controls: true
+})
+
+const toggle = () => isActive.value ? pause() : resume()
+</script>
+	
 <template>
-	<view>
-		
+	<view class="w-screen h-screen flex items-center justify-center cursor-pointer" @tap="toggle">
+		TODO {{counter}}
 	</view>
 </template>
-
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
-</script>
-
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
-</style>

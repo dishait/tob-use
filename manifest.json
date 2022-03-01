@@ -1,7 +1,7 @@
 {
     "name" : "tob-use",
     "appid" : "__UNI__A4603BA",
-    "description" : "",
+    "description" : "uniapp 的高效 use 库",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,

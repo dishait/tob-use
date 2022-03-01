@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue-demi'
+import { ref, watch } from 'vue'
 import { useDebounceFn } from '../useDebounceFn'
 
 /**

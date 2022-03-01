@@ -1,4 +1,4 @@
-import { unref, watch } from 'vue-demi'
+import { unref, watch } from 'vue'
 import { promiseTimeout } from '../../shared/base'
 
 /**
