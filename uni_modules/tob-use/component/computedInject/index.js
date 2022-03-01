@@ -12,14 +12,19 @@ export const computedInject = (
 ) => {
 	let source = inject(key)
 
-	if (defaultSource) source = inject(key, defaultSource)
+	if (defaultSource) {
+		source = inject(key, defaultSource)
+	}
+
 	// 使得默认值作为工厂函数
-	if (treatDefaultAsFactory)
+	if (treatDefaultAsFactory) {
 		source = inject(
 			key,
 			defaultSource,
 			treatDefaultAsFactory
 		)
+	}
+
 
 	if (isFunction(options)) {
 		return computed(ctx => options(source, ctx))
