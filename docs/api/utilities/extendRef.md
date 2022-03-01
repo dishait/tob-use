@@ -6,7 +6,7 @@ ref 扩展
 
 ```js
 import { ref } from 'vue'
-import { extendRef } from '@/uni_modules/tob-use/index.js'
+import { extendRef } from '@/uni_modules/tob-use'
 
 const myRef = ref('content')
 

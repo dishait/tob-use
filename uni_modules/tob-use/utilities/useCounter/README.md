@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { useCounter } from '@/uni_modules/tob-use/index.js'
+import { useCounter } from '@/uni_modules/tob-use'
 
 const { count, inc, dec, set, reset } = useCounter()
 
@@ -38,7 +38,7 @@ count.value // 200
 ### 初始值
 
 ```ts
-import { useCounter } from '@/uni_modules/tob-use/index.js'
+import { useCounter } from '@/uni_modules/tob-use'
 
 const { count, inc, dec, set, reset } = useCounter(10)
 

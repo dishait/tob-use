@@ -10,7 +10,7 @@
 
 ```js
 import { ref } from 'vue'
-import { until } from '@/uni_modules/tob-use/index.js'
+import { until } from '@/uni_modules/tob-use'
 
 const source = ref(false)
 
@@ -37,7 +37,7 @@ setTimeout(() => {
 
 ```js
 import { ref } from 'vue'
-import { until } from '@/uni_modules/tob-use/index.js'
+import { until } from '@/uni_modules/tob-use'
 
 const source = ref(false)
 
@@ -66,7 +66,7 @@ const runAsync = async () => {
 
 ```js
 import { ref } from 'vue'
-import { until } from '@/uni_modules/tob-use/index.js'
+import { until } from '@/uni_modules/tob-use'
 
 const source = ref(false)
 
@@ -88,7 +88,7 @@ const runAsync = async () => {
 
 ```js
 import { ref } from 'vue'
-import { until } from '@/uni_modules/tob-use/index.js'
+import { until } from '@/uni_modules/tob-use'
 
 const source = ref(false)
 

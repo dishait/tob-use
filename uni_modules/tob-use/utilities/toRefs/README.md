@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { toRefs } from '@/uni_modules/tob-use/index.js'
+import { toRefs } from '@/uni_modules/tob-use'
 
 const obj = reactive({ a: 'a', b: 0 })
 const arr = reactive(['c', 0])
@@ -19,7 +19,7 @@ const [ c, d ] = toRefs(arr)
 
 ```ts
 import { ref } from 'vue'
-import { toRefs } from '@/uni_modules/tob-use/index.js'
+import { toRefs } from '@/uni_modules/tob-use'
 
 const objRef = ref({ a: 'a', b: 0 })
 const arrRef = ref(['c', 0])

@@ -10,7 +10,7 @@
 
 ```js
 import { ref } from 'vue'
-import { eagerComputed } from '@/uni_modules/tob-use/index.js'
+import { eagerComputed } from '@/uni_modules/tob-use'
 
 const todos = ref([])
 const hasOpenTodos = eagerComputed(() => !!todos.length)
@@ -165,7 +165,7 @@ const sortedList = computed(() => {
 ```html
 <script setup>
 import { computed, ref } from "vue"
-import { eagerComputed } from '@/uni_modules/tob-use/index.js'
+import { eagerComputed } from '@/uni_modules/tob-use'
 
 const count = ref(1)
 

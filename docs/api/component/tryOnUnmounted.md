@@ -7,7 +7,7 @@
 ## Usage
 
 ```js
-import { tryOnUnmounted } from '@/uni_modules/tob-use/index.js'
+import { tryOnUnmounted } from '@/uni_modules/tob-use'
 
 // 不在组件内，将不会注册回调
 tryOnUnmounted(() => {
@@ -17,7 +17,7 @@ tryOnUnmounted(() => {
 
 ```html
 <script setup>
-import { tryOnUnmounted } from '@/uni_modules/tob-use/index.js'
+import { tryOnUnmounted } from '@/uni_modules/tob-use'
 
 // 在组件内，就像平常的 onUnmount
 tryOnUnmounted(() => {

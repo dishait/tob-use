@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useClamp } from '@/uni_modules/tob-use/index.js'
+import { useClamp } from '@/uni_modules/tob-use'
 
 const min = ref(0)
 const max = ref(10)

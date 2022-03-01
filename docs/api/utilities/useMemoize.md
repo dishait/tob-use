@@ -9,7 +9,7 @@
 ### 基础
 
 ```js
-import { useMemoize } from '@/uni_modules/tob-use/index.js'
+import { useMemoize } from '@/uni_modules/tob-use'
 
 // 生成数组
 const generateArray = length => {
@@ -45,7 +45,7 @@ useArray.clear() // 清除所有缓存
 当然有时候我们希望让两个 `useMemoize` 共用缓存。那么可以这样 👇
 
 ```ts
-import { useMemoize } from '@/uni_modules/tob-use/index.js'
+import { useMemoize } from '@/uni_modules/tob-use'
 
 // 被共用的缓存
 const cache = new Map()
@@ -69,7 +69,7 @@ const a2 = useArray2(1) // 使用缓存里长度为 1 的数组
 默认情况下，`useMemoize` 会自动根据函数所有的参数作为缓存的 `key`
 
 ```ts
-import { useMemoize } from '@/uni_modules/tob-use/index.js'
+import { useMemoize } from '@/uni_modules/tob-use'
 
 // 生成数组，但可以传入第二个参数递增倍数
 const generateArray = (length, multiple = 1) => {

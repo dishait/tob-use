@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { isDefined } from '@/uni_modules/tob-use/index.js'
+import { isDefined } from '@/uni_modules/tob-use'
 
 const example = ref(undefined)
 

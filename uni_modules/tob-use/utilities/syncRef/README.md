@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { syncRef } from '@/uni_modules/tob-use/index.js'
+import { syncRef } from '@/uni_modules/tob-use'
 
 const source = ref(1)
 const target = ref(2)
@@ -33,7 +33,7 @@ target.value // 仍然是 10
 
 ```ts
 import { ref } from 'vue'
-import { syncRef } from '@/uni_modules/tob-use/index.js'
+import { syncRef } from '@/uni_modules/tob-use'
 
 const a = ref(1)
 const b = ref(2)
@@ -57,7 +57,7 @@ c.value // 2
 
 ```ts
 import { ref } from 'vue'
-import { syncRef } from '@/uni_modules/tob-use/index.js'
+import { syncRef } from '@/uni_modules/tob-use'
 
 const source = ref(1)
 const target = ref(2)

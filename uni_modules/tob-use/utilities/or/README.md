@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { or } from '@/uni_modules/tob-use/index.js'
+import { or } from '@/uni_modules/tob-use'
 
 const a = ref(true)
 const b = ref(false)

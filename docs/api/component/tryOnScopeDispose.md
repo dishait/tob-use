@@ -9,7 +9,7 @@
 ## Usage
 
 ```js
-import { tryOnScopeDispose } from '@/uni_modules/tob-use/index.js'
+import { tryOnScopeDispose } from '@/uni_modules/tob-use'
 
 // 不在组件内，将不会注册回调，并返回 false
 const result = tryOnScopeDispose(() => {
@@ -21,7 +21,7 @@ result // false
 
 ```html
 <script setup>
-import { tryOnScopeDispose } from '@/uni_modules/tob-use/index.js'
+import { tryOnScopeDispose } from '@/uni_modules/tob-use'
 
 const timer = setTimeout(() => {
     console.log("我可能不会触发")

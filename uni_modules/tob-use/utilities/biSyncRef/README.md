@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { biSyncRef } from '@/uni_modules/tob-use/index.js'
+import { biSyncRef } from '@/uni_modules/tob-use'
 
 const a = ref('a')
 const b = ref('b')

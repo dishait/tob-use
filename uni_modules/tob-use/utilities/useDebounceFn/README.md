@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useDebounceFn } from '@/uni_modules/tob-use/index.js'
+import { useDebounceFn } from '@/uni_modules/tob-use'
 
 // 第二个参数设置防抖间隔，单位为毫秒，默认为 200 毫秒
 const debouncedFn = useDebounceFn(() => {
@@ -30,7 +30,7 @@ setTimeout(() => {
 
 ```ts
 import { ref } from 'vue'
-import { useDebounceFn } from '@/uni_modules/tob-use/index.js'
+import { useDebounceFn } from '@/uni_modules/tob-use'
 
 // 第三个参数可接受配置
 const debouncedFn = useDebounceFn(() => {

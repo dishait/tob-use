@@ -9,7 +9,7 @@
 ```html
 <script setup>
 import { ref, provide } from 'vue'
-import { computedInject } from '@/uni_modules/tob-use/index.js'
+import { computedInject } from '@/uni_modules/tob-use'
 
 const key = 'foo'
 

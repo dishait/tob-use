@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { useOffsetPagination } from '@/uni_modules/tob-use/index.js'
+import { useOffsetPagination } from '@/uni_modules/tob-use'
 
 const result = useOffsetPagination({
   page: 1, // 初始当前第几页，默认为 1
@@ -33,7 +33,7 @@ result.next() // 下一页，触发 result.currentPage.value--
 ### 回调
 
 ```ts
-import { useOffsetPagination } from '@/uni_modules/tob-use/index.js'
+import { useOffsetPagination } from '@/uni_modules/tob-use'
 
 const result = useOffsetPagination({
     // 省略其他配置 ...

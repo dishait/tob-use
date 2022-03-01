@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useThrottle } from '@/uni_modules/tob-use/index.js'
+import { useThrottle } from '@/uni_modules/tob-use'
 
 const input = ref('')
 
@@ -24,7 +24,7 @@ const throttled = useThrottle(input, 1000)
 
 ```ts
 import { ref } from 'vue'
-import { useThrottle } from '@/uni_modules/tob-use/index.js'
+import { useThrottle } from '@/uni_modules/tob-use'
 
 const input = ref('')
 const throttled = useThrottle(input, 1000, false)
@@ -38,7 +38,7 @@ const throttled = useThrottle(input, 1000, false)
 
 ```ts
 import { ref } from 'vue'
-import { useThrottle } from '@/uni_modules/tob-use/index.js'
+import { useThrottle } from '@/uni_modules/tob-use'
 
 const input = ref('')
 const throttled = useThrottle(input, 1000, true, false)

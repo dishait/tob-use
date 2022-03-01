@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { watchAtMost } from '@/uni_modules/tob-use/index.js'
+import { watchAtMost } from '@/uni_modules/tob-use'
 
 const source = ref(1)
 
@@ -27,7 +27,7 @@ const stop = watchAtMost(
 
 ```js
 import { ref } from 'vue'
-import { watchAtMost } from '@/uni_modules/tob-use/index.js'
+import { watchAtMost } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 

@@ -8,7 +8,7 @@
 
 ```js
 import { ref, nextTick } from 'vue'
-import { ignorableWatch } from '@/uni_modules/tob-use/index.js'
+import { ignorableWatch } from '@/uni_modules/tob-use'
 
 const source = ref('foo')
 
@@ -44,7 +44,7 @@ run()
 
 ```ts
 import { ref } from 'vue'
-import { ignorableWatch } from '@/uni_modules/tob-use/index.js'
+import { ignorableWatch } from '@/uni_modules/tob-use'
 
 const source = ref('foo')
 const callback = (v) => console.log(`更新 ${v}!`) 

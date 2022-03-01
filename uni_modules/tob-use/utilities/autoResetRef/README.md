@@ -7,7 +7,7 @@
 
 ```js
 import { ref } from 'vue'
-import { autoResetRef } from '@/uni_modules/tob-use/index.js'
+import { autoResetRef } from '@/uni_modules/tob-use'
 
 // 返回一个 ref，第二个参数可设置延迟，默认为 10 秒
 const message = autoResetRef('默认', 1000) 

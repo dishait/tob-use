@@ -8,7 +8,7 @@
 
 ```html
 <script setup>
-import { useInterval } from '@/uni_modules/tob-use/index.js'
+import { useInterval } from '@/uni_modules/tob-use'
 
 // 设置间隔，单位为毫秒，默认为 1000 毫秒
 const counter = useInterval(200) 
@@ -25,7 +25,7 @@ const counter = useInterval(200)
 
 ```html
 <script setup>
-import { useInterval } from '@/uni_modules/tob-use/index.js'
+import { useInterval } from '@/uni_modules/tob-use'
 
 const { 
     pause,  // 暂停
@@ -51,7 +51,7 @@ const toggle = computed(() => isActive.value ? pause : resume)
 ### 立即执行
 
 ```js
-import { useInterval } from '@/uni_modules/tob-use/index.js'
+import { useInterval } from '@/uni_modules/tob-use'
 
 const counter = useInterval(200, { 
     immediate: false // 立即开启，默认为 true

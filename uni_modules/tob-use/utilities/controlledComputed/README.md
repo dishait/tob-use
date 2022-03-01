@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { controlledComputed } from '@/uni_modules/tob-use/index.js'
+import { controlledComputed } from '@/uni_modules/tob-use'
 
 let source = ref('foo')
 let counter = ref(0)

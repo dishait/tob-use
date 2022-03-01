@@ -6,7 +6,7 @@
 ## Usage
 
 ```js
-import { tryOnBeforeUnmount } from '@/uni_modules/tob-use/index.js'
+import { tryOnBeforeUnmount } from '@/uni_modules/tob-use'
 
 // 不在组件内，将不会注册回调
 tryOnBeforeUnmount(() => {
@@ -16,7 +16,7 @@ tryOnBeforeUnmount(() => {
 
 ```html
 <script setup>
-import { tryOnBeforeUnmount } from '@/uni_modules/tob-use/index.js'
+import { tryOnBeforeUnmount } from '@/uni_modules/tob-use'
 
 // 在组件内，就像平常的 onBeforeUnmount
 tryOnBeforeUnmount(() => {

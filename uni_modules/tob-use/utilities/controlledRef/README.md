@@ -8,7 +8,7 @@
 
 ```js
 import { computed } from 'vue'
-import { controlledRef } from '@/uni_modules/tob-use/index.js'
+import { controlledRef } from '@/uni_modules/tob-use'
 
 let num = controlledRef(0)
 const doubled = computed(() => num.value * 2)
@@ -41,7 +41,7 @@ console.log(doubled.value) // 100
 有时候我们不希望 `getter` 访问时 `track` 收集副作用，或 `setter` 设置时 `trigger` 触发副作用。
 
 ```ts
-import { controlledRef } from '@/uni_modules/tob-use/index.js'
+import { controlledRef } from '@/uni_modules/tob-use'
 
 const foo = controlledRef('foo')
 ```
@@ -69,7 +69,7 @@ foo.lay('bar')
 配置 `onBeforeChange` 可以判断是否接受新值
 
 ```ts
-import { controlledRef } from '@/uni_modules/tob-use/index.js'
+import { controlledRef } from '@/uni_modules/tob-use'
 
 const num = controlledRef(0, {
   onBeforeChange(value, oldValue) {
@@ -91,7 +91,7 @@ console.log(num.value) // 1 (新值被忽略了)
 类似原生的 `watch`，可以监听值的变更。
 
 ```ts
-import { controlledRef } from '@/uni_modules/tob-use/index.js'
+import { controlledRef } from '@/uni_modules/tob-use'
 
 const num = controlledRef(0, {
   onChanged(value, oldValue) {

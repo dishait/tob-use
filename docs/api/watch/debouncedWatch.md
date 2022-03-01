@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { debouncedWatch } from '@/uni_modules/tob-use/index.js'
+import { debouncedWatch } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 
@@ -29,7 +29,7 @@ source.value = 'new' // 500 毫秒后输出 old -> new
 
 ```ts
 import { ref } from 'vue'
-import { debouncedWatch } from '@/uni_modules/tob-use/index.js'
+import { debouncedWatch } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 

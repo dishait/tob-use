@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { throttledWatch } from '@/uni_modules/tob-use/index.js'
+import { throttledWatch } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 
@@ -27,7 +27,7 @@ source.value = 'new'
 
 ```ts
 import { ref } from 'vue'
-import { throttledWatch } from '@/uni_modules/tob-use/index.js'
+import { throttledWatch } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 

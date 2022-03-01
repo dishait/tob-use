@@ -7,7 +7,7 @@
 ```html
 <script setup>
 import { ref } from 'vue'
-import { useMounted } from '@/uni_modules/tob-use/index.js'
+import { useMounted } from '@/uni_modules/tob-use'
 
 const isMounted = useMounted()
 

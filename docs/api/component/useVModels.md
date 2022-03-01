@@ -10,7 +10,7 @@
 
 ```html
 <script setup>
-import { useVModels } from '@/uni_modules/tob-use/index.js'
+import { useVModels } from '@/uni_modules/tob-use'
 
 const props = defineProps({
     foo: String,
@@ -38,7 +38,7 @@ bar.value = 'bar' // emit('update:bar', 'bar')
 
 ```html
 <script setup>
-import { useVModels } from '@/uni_modules/tob-use/index.js'
+import { useVModels } from '@/uni_modules/tob-use'
 
 const props = defineProps({
     foo: String,

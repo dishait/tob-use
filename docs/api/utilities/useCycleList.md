@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { useCycleList } from '@/uni_modules/tob-use/index.js'
+import { useCycleList } from '@/uni_modules/tob-use'
 
 const { state, next, prev, index } = useCycleList([
   'Dog',
@@ -38,7 +38,7 @@ state.value // 'Dog'
 ### 初始值
 
 ```ts
-import { useCycleList } from '@/uni_modules/tob-use/index.js'
+import { useCycleList } from '@/uni_modules/tob-use'
 
 const { state, next, prev } = useCycleList([
   'Dog',

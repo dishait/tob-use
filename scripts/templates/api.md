@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { {{name}} } from '@/uni_modules/tob-use/index.js'
+import { {{name}} } from '@/uni_modules/tob-use'
 
 
 ```

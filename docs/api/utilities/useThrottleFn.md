@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useThrottleFn } from '@/uni_modules/tob-use/index.js'
+import { useThrottleFn } from '@/uni_modules/tob-use'
 
 // 第二个参数设置节流间隔，单位为毫秒，默认为 200 毫秒
 const throttledFn = useThrottleFn(() => {
@@ -24,7 +24,7 @@ throttledFn()
 
 ```ts
 import { ref } from 'vue'
-import { useThrottle } from '@/uni_modules/tob-use/index.js'
+import { useThrottle } from '@/uni_modules/tob-use'
 
 const throttledFn = useThrottleFn(() => {
     console.log('执行了')
@@ -39,7 +39,7 @@ const throttledFn = useThrottleFn(() => {
 
 ```ts
 import { ref } from 'vue'
-import { useThrottle } from '@/uni_modules/tob-use/index.js'
+import { useThrottle } from '@/uni_modules/tob-use'
 
 const throttledFn = useThrottleFn(() => {
     console.log('执行了')

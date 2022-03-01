@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { useAsyncQueue } from '@/uni_modules/tob-use/index.js'
+import { useAsyncQueue } from '@/uni_modules/tob-use'
 
 const p1 = () => {
   return new Promise((resolve) => {
@@ -40,7 +40,7 @@ setTimeout(() => {
 ### 打断
 
 ```ts
-import { useAsyncQueue } from '@/uni_modules/tob-use/index.js'
+import { useAsyncQueue } from '@/uni_modules/tob-use'
 
 const { activeIndex, result } = useAsyncQueue([
     // ... 省略异步任务
@@ -54,7 +54,7 @@ const { activeIndex, result } = useAsyncQueue([
 ### 回调
 
 ```ts
-import { useAsyncQueue } from '@/uni_modules/tob-use/index.js'
+import { useAsyncQueue } from '@/uni_modules/tob-use'
 
 const { activeIndex, result } = useAsyncQueue([
     // ... 省略异步任务

@@ -8,7 +8,7 @@ AND 判断
 
 ```js
 import { ref, watch } from 'vue'
-import { and } from '@/uni_modules/tob-use/index.js'
+import { and } from '@/uni_modules/tob-use'
 
 // 支持 ref 包裹的参数
 const foo = ref(false)

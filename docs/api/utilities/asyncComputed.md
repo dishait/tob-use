@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 // 模拟异步请求
 const mock = (payload) => {
@@ -38,7 +38,7 @@ const result = asyncComputed(
 
 ```ts
 import { ref } from 'vue'
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 const evaluating = ref(false)
 
@@ -61,7 +61,7 @@ const userInfo = asyncComputed(
 
 ```ts{22-23}
 import { ref } from 'vue'
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 // 模拟的带终止的异步请求
 const mock = payload => {
@@ -103,7 +103,7 @@ delay.value = 3
 
 ```ts
 import { ref } from 'vue'
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 const evaluating = ref(false)
 
@@ -125,7 +125,7 @@ userInfo.value
 `onError` 可以捕获到异步进行过程中的错误
 
 ```ts
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 const userInfo = asyncComputed(
   async() => { /* 省略逻辑 */ },
@@ -164,7 +164,7 @@ const double = computed(() => {
 
 ```ts
 import { ref } from "vue"
-import { asyncComputed } from '@/uni_modules/tob-use/index.js'
+import { asyncComputed } from '@/uni_modules/tob-use'
 
 const count = ref(1)
 

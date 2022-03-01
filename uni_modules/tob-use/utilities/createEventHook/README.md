@@ -7,7 +7,7 @@
 ### 基础
 
 ```ts
-import { createEventHook } from '@/uni_modules/tob-use/index.js'
+import { createEventHook } from '@/uni_modules/tob-use'
 
 const event = createEventHook()
 
@@ -40,7 +40,7 @@ event.trigger(1) // 打印 1，2，但不会打印 '触发了'，因为刚刚被
 ### 封装请求
 
 ```js
-import { createEventHook } from '@/uni_modules/tob-use/index.js'
+import { createEventHook } from '@/uni_modules/tob-use'
 
 /**
  * 封装请求

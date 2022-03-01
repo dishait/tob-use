@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { createUnrefFn } from '@/uni_modules/tob-use/index.js'
+import { createUnrefFn } from '@/uni_modules/tob-use'
 
 const a = ref(1)
 const b = ref(2)

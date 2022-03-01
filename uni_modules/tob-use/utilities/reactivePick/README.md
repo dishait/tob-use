@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { reactivePick } from '@/uni_modules/tob-use/index.js'
+import { reactivePick } from '@/uni_modules/tob-use'
 
 const obj = reactive({
   x: 0,

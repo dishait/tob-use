@@ -12,7 +12,7 @@
 <!-- foo 组件 -->
 <script setup>
 import { ref } from 'vue'
-import { useVModel } from '@/uni_modules/tob-use/index.js'
+import { useVModel } from '@/uni_modules/tob-use'
 
 const props = defineProps({
     modelValue: string
@@ -55,7 +55,7 @@ const bar = ref('bar')
 <!-- foo 组件 -->
 <script setup>
 import { ref } from 'vue'
-import { useVModel } from '@/uni_modules/tob-use/index.js'
+import { useVModel } from '@/uni_modules/tob-use'
 
 const props = defineProps({
     foo: string // 注意 props 也要有对应的设置
@@ -95,7 +95,7 @@ foo.value = 'foo' // emit('update:foo', 'foo')
 ```html
 <script>
 import { ref } from 'vue'
-import { useVModel } from '@/uni_modules/tob-use/index.js'
+import { useVModel } from '@/uni_modules/tob-use'
 
 const props = defineProps({
     modelValue: string

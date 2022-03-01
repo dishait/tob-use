@@ -10,7 +10,7 @@
 
 ```js
 import { ref } from 'vue'
-import { reactifyObject } from '@/uni_modules/tob-use/index.js'
+import { reactifyObject } from '@/uni_modules/tob-use'
 
 const a = ref(1)
 
@@ -28,7 +28,7 @@ reactifiedConsole.log(a) // 不需要 .value
 包含自身属性，包括不可枚举属性但不包括 `Symbol` 值作为名称的属性
 
 ```ts
-import { reactifyObject } from '@/uni_modules/tob-use/index.js'
+import { reactifyObject } from '@/uni_modules/tob-use'
 
 const reactifiedConsole = reactifyObject(console, {
     includeOwnProperties: true // 默认为 true
@@ -43,7 +43,7 @@ const reactifiedConsole = reactifyObject(console, {
 
 ```ts
 import { ref } from 'vue'
-import { reactifyObject } from '@/uni_modules/tob-use/index.js'
+import { reactifyObject } from '@/uni_modules/tob-use'
 
 // 只允许 log 被处理
 const reactifiedConsole = reactifyObject(console, ['log'])

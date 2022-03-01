@@ -10,7 +10,7 @@
 
 ```ts
 import { ref } from 'vue'
-import { reactify } from '@/uni_modules/tob-use/index.js'
+import { reactify } from '@/uni_modules/tob-use'
 
 const count = ref(1)
 
@@ -54,7 +54,7 @@ console.log(sum.value) // 6
 
 ```ts
 import { ref } from 'vue'
-import { reactify } from '@/uni_modules/tob-use/index.js'
+import { reactify } from '@/uni_modules/tob-use'
 
 const createSum = reactify((a, b, c) => {
     // 不需要考虑 .value

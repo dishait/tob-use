@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useEventBus } from '@/uni_modules/tob-use/index.js'
+import { useEventBus } from '@/uni_modules/tob-use'
 
 const bus = useEventBus('news')
 

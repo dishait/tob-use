@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useDebounce } from '@/uni_modules/tob-use/index.js'
+import { useDebounce } from '@/uni_modules/tob-use'
 
 const input = ref('foo')
 
@@ -35,7 +35,7 @@ setTimeout(() => {
 
 ```ts
 import { ref } from 'vue'
-import { useDebounce } from '@/uni_modules/tob-use/index.js'
+import { useDebounce } from '@/uni_modules/tob-use'
 
 const input = ref('foo')
 

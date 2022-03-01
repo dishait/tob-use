@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { whenever } from '@/uni_modules/tob-use/index.js'
+import { whenever } from '@/uni_modules/tob-use'
 
 const source = ref(false)
 
@@ -27,7 +27,7 @@ source.value = true // 输出 '触发了'
 
 ```js
 import { ref } from 'vue'
-import { whenever } from '@/uni_modules/tob-use/index.js'
+import { whenever } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 

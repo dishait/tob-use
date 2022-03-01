@@ -7,7 +7,7 @@
 ## Usage
 
 ```js
-import { tryOnMounted } from '@/uni_modules/tob-use/index.js'
+import { tryOnMounted } from '@/uni_modules/tob-use'
 
 // 不在组件内，将直接调用
 tryOnMounted(() => {
@@ -17,7 +17,7 @@ tryOnMounted(() => {
 
 ```html
 <script setup>
-import { tryOnMounted } from '@/uni_modules/tob-use/index.js'
+import { tryOnMounted } from '@/uni_modules/tob-use'
 
 // 在组件内，就像平常的 onMount
 tryOnMounted(() => {
@@ -31,7 +31,7 @@ tryOnMounted(() => {
 ### 非同步
 
 ```js
-import { tryOnMounted } from '@/uni_modules/tob-use/index.js'
+import { tryOnMounted } from '@/uni_modules/tob-use'
 
 // 不在组件内，设置第二参数，将在 nextTick 调用
 tryOnMounted(() => {

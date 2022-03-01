@@ -7,7 +7,7 @@
 
 ```js
 import { ref } from 'vue'
-import { watchWithFilter } from '@/uni_modules/tob-use/index.js'
+import { watchWithFilter } from '@/uni_modules/tob-use'
 
 const source = ref('foo')
 
@@ -30,7 +30,7 @@ watchWithFilter(
 
 ```js
 import { ref } from 'vue'
-import { watchOnce } from '@/uni_modules/tob-use/index.js'
+import { watchOnce } from '@/uni_modules/tob-use'
 
 const source = ref('old')
 

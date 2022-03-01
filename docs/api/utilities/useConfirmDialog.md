@@ -8,7 +8,7 @@
 
 ```html
 <script setup>
-import { useConfirmDialog } from '@/uni_modules/tob-use/index.js'
+import { useConfirmDialog } from '@/uni_modules/tob-use'
 
 const {
   isRevealed, // 是否显示，是一个计算属性
@@ -56,7 +56,7 @@ onCancel(data => {
 ```html
 <script setup>
 import { ref } from "vue"
-import { useConfirmDialog } from '@/uni_modules/tob-use/index.js'
+import { useConfirmDialog } from '@/uni_modules/tob-use'
 
 // 可以传入布尔类型的 ref 参数，作为显示状态
 const show = ref(false)

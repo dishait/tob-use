@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { makeDestructurable } from '@/uni_modules/tob-use/index.js'
+import { makeDestructurable } from '@/uni_modules/tob-use'
 
 const bar = 1024
 const foo = { name: 'foo' }

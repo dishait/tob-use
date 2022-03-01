@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { onUpdated } from 'vue'
-import { useTemplateRefsList } from '@/uni_modules/tob-use/index.js'
+import { useTemplateRefsList } from '@/uni_modules/tob-use'
 
 const refs = useTemplateRefsList()
 

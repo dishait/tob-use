@@ -6,7 +6,7 @@ ref 的默认值
 
 ```js
 import { ref } from 'vue'
-import { refDefault } from '@/uni_modules/tob-use/index.js'
+import { refDefault } from '@/uni_modules/tob-use'
 
 // 未定义的 ref
 const raw = ref()

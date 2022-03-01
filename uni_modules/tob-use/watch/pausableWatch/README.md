@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { pausableWatch } from '@/uni_modules/tob-use/index.js'
+import { pausableWatch } from '@/uni_modules/tob-use'
 
 const source = ref('foo')
 
@@ -42,7 +42,7 @@ run()
 
 ```ts
 import { ref } from 'vue'
-import { pausableWatch } from '@/uni_modules/tob-use/index.js'
+import { pausableWatch } from '@/uni_modules/tob-use'
 
 const source = ref('foo')
 const callback = (v) => console.log(`更新 ${v}!`) 

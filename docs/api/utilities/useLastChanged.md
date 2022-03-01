@@ -8,7 +8,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useLastChanged } from '@/uni_modules/tob-use/index.js'
+import { useLastChanged } from '@/uni_modules/tob-use'
 
 const a = ref(0)
 
@@ -25,7 +25,7 @@ lastChanged.value // 最后一次更新的时间
 
 ```js
 import { ref } from 'vue'
-import { useLastChanged } from '@/uni_modules/tob-use/index.js'
+import { useLastChanged } from '@/uni_modules/tob-use'
 
 const a = ref(0)
 
@@ -46,7 +46,7 @@ lastChanged.value // 最后一次更新的时间
 
 ```ts
 import { ref } from 'vue'
-import { useLastChanged } from '@/uni_modules/tob-use/index.js'
+import { useLastChanged } from '@/uni_modules/tob-use'
 
 const a = ref(0)
 

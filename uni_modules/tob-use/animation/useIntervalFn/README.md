@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { useIntervalFn } from '@/uni_modules/tob-use/index.js'
+import { useIntervalFn } from '@/uni_modules/tob-use'
 
 // 第二个参数设置间隔，单位为毫秒，默认为 1000 毫秒
 const { pause, resume, isActive } = useIntervalFn(() => {
@@ -25,7 +25,7 @@ resume() // 恢复
 ### Watch 选项
 
 ```js
-import { useInterval } from '@/uni_modules/tob-use/index.js'
+import { useInterval } from '@/uni_modules/tob-use'
 
 const { pause, resume, isActive } = useIntervalFn(200, { 
     immediate: false, // 立即开启，默认为 true

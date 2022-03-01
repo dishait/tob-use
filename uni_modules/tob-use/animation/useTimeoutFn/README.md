@@ -7,7 +7,7 @@
 ### 基础
 
 ```js
-import { useTimeoutFn } from '@/uni_modules/tob-use/index.js'
+import { useTimeoutFn } from '@/uni_modules/tob-use'
 
 const { 
     stop, 
@@ -23,7 +23,7 @@ const {
 ### 立即开始
 
 ```js
-import { useTimeoutFn } from '@/uni_modules/tob-use/index.js'
+import { useTimeoutFn } from '@/uni_modules/tob-use'
 
 const instance = useTimeoutFn(() => {
   // 你希望执行的函数

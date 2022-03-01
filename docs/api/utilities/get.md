@@ -6,7 +6,7 @@
 
 ```js
 import { ref } from 'vue'
-import { get } from '@/uni_modules/tob-use/index.js'
+import { get } from '@/uni_modules/tob-use'
 
 const a = ref(42)
 
@@ -18,7 +18,7 @@ console.log(get(a)) // 42
 
 ```js
 import { ref } from 'vue'
-import { get } from '@/uni_modules/tob-use/index.js'
+import { get } from '@/uni_modules/tob-use'
 
 const foo = ref({
     bar: 100
