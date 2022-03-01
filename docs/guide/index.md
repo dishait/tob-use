@@ -43,7 +43,9 @@
 
 ## 启发
 
-该 `use` 库 受 [vueuse](https://vueuse.org/) 启发，同时该 `use` 库绝大部分 `api` 来自其不需要依赖 `web` 环境的 `api`。如果你希望在 `vue3` 下为构建纯 `web` 项目提高开发效率，节省时间，那么推荐你使用 👉 [vueuse](https://vueuse.org/)
+该 `use` 库 受 [vueuse](https://vueuse.org/) 启发，同时该 `use` 库绝大部分 `api` 来自其不需要依赖 `web` 环境的部分。
+
+如果你希望在 `vue3` 下为构建纯 `web` 项目提高开发效率，节省时间，那么推荐你使用 👉 [vueuse](https://vueuse.org/)。
 
 <br />
 <br />
