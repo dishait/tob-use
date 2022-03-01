@@ -1,6 +1,6 @@
 {
   "name": "tob-use",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "uniapp 的高效 use 库",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "auto:create": "node scripts/create.js",
     "auto:remove": "node scripts/remove.js",
     "docs:dev": "vuepress dev docs",
