@@ -4,7 +4,7 @@
 
 作用可见该文章讨论 👉 [When a computed property can be the wrong tool](https://dev.to/linusborg/vue-when-a-computed-property-can-be-the-wrong-tool-195j)。
 
-当然更简单的解释可见 👉 [Motation](/api/utilities/eagerComputed.html#Motation)
+当然更简单的解释可见 👉 [Motation](/tob-use/api/utilities/eagerComputed.html#Motation)
 
 ## Usage
 

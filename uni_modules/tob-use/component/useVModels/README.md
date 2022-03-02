@@ -2,7 +2,7 @@
 
 使用多个的 v-model
 
-大多数情况下，可能你只需要使用 [useVModel](/api/component/useVModel)
+大多数情况下，可能你只需要使用 [useVModel](/tob-use/api/component/useVModel)
 
 ## Usage
 

@@ -4,7 +4,7 @@
 
 这是一个较为底层的 `api`，需要你对 `effect` 作用域有非常好的理解。
 
-大多数情况下，它相当于 [tryOnUnmounted](/api/component/tryOnUnmounted)
+大多数情况下，它相当于 [tryOnUnmounted](/tob-use/api/component/tryOnUnmounted)
 
 ## Usage
 
