@@ -1,1 +1,0 @@
-const t={key:"v-94f35726",path:"/api/utilities/throttledRef.html",title:"throttledRef",lang:"zh-CN",frontmatter:{sidebarDepth:0},excerpt:"",headers:[{level:2,title:"Usage",slug:"usage",children:[]}],git:{updatedTime:1646136208e3,contributors:[{name:"markthree",email:"1801982702@qq.com",commits:3}]},filePathRelative:"api/utilities/throttledRef.md"};export{t as data};
