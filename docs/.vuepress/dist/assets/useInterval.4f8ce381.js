@@ -1,0 +1,1 @@
+import{h as n,r as o,i as c,j as u,o as i,a as p,t as f,u as m}from"./app.fad36ee9.js";const y={setup(_){const{counter:t,resume:r,pause:a}=n(200,{controls:!0}),e=o(null),l=c(e);return u(l,s=>{s?r():a()}),(s,h)=>(i(),p("div",{class:"mt-2",ref_key:"el",ref:e},"\u6BCF 200 \u6BEB\u79D2\u66F4\u65B0: "+f(m(t)),513))}};export{y as default};

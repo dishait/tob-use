@@ -1,0 +1,37 @@
+import{p as n}from"./app.fad36ee9.js";import{_ as s}from"./plugin-vue_export-helper.21dcd24c.js";const a={},e=n(`<h1 id="useoffsetpagination" tabindex="-1"><a class="header-anchor" href="#useoffsetpagination" aria-hidden="true">#</a> useOffsetPagination</h1><p>\u504F\u79FB\u5206\u9875</p><h2 id="usage" tabindex="-1"><a class="header-anchor" href="#usage" aria-hidden="true">#</a> Usage</h2><h3 id="\u57FA\u7840" tabindex="-1"><a class="header-anchor" href="#\u57FA\u7840" aria-hidden="true">#</a> \u57FA\u7840</h3><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> useOffsetPagination <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@/uni_modules/tob-use&#39;</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">useOffsetPagination</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">page</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// \u521D\u59CB\u5F53\u524D\u7B2C\u51E0\u9875\uFF0C\u9ED8\u8BA4\u4E3A 1</span>
+  <span class="token literal-property property">pageSize</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token comment">// \u6BCF\u9875\u5143\u7D20\u6570\u91CF\uFF0C\u9ED8\u8BA4\u4E3A 10</span>
+  <span class="token literal-property property">total</span><span class="token operator">:</span> <span class="token number">100</span> <span class="token comment">// \u603B\u5143\u7D20\u6570\u91CF\uFF0C\u9ED8\u8BA4\u4E3A Infinity \u65E0\u9650</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+result<span class="token punctuation">.</span>pageCount<span class="token punctuation">.</span>value <span class="token comment">// \u603B\u9875\u6570\uFF0C\u8BA1\u7B97\u5C5E\u6027</span>
+
+result<span class="token punctuation">.</span>currentPage<span class="token punctuation">.</span>value <span class="token comment">// \u5F53\u524D\u7B2C\u51E0\u9875\uFF0C\u8BA1\u7B97\u5C5E\u6027</span>
+
+result<span class="token punctuation">.</span>isFirstPage<span class="token punctuation">.</span>value <span class="token comment">// \u662F\u5426\u662F\u7B2C\u4E00\u9875\uFF0C\u8BA1\u7B97\u5C5E\u6027</span>
+result<span class="token punctuation">.</span>isLastPage<span class="token punctuation">.</span>value <span class="token comment">// \u662F\u5426\u662F\u6700\u540E\u4E00\u9875\uFF0C\u8BA1\u7B97\u5C5E\u6027</span>
+
+result<span class="token punctuation">.</span>currentPageSize<span class="token punctuation">.</span>value <span class="token comment">// \u5F53\u524D\u6BCF\u9875\u5143\u7D20\u6570\u91CF\uFF0C\u8BA1\u7B97\u5C5E\u6027</span>
+
+result<span class="token punctuation">.</span><span class="token function">prev</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// \u4E0A\u4E00\u9875\uFF0C\u89E6\u53D1 result.currentPage.value++</span>
+result<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// \u4E0B\u4E00\u9875\uFF0C\u89E6\u53D1 result.currentPage.value--</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><br><h3 id="\u56DE\u8C03" tabindex="-1"><a class="header-anchor" href="#\u56DE\u8C03" aria-hidden="true">#</a> \u56DE\u8C03</h3><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> useOffsetPagination <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@/uni_modules/tob-use&#39;</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">useOffsetPagination</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// \u7701\u7565\u5176\u4ED6\u914D\u7F6E ...</span>
+    <span class="token comment">// \u603B\u9875\u6570 result.pageCount \u53D8\u5316\u65F6\u89E6\u53D1</span>
+    <span class="token function">onPageCountChange</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token comment">// \u4E0A\u4E00\u6B21\u7684\u7ED3\u679C\uFF0C\u4E0D\u8FC7\u662F\u4E00\u4E2A reactive</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// \u5F53\u524D\u7B2C\u51E0\u9875 result.currentPage \u53D8\u66F4\u65F6\u89E6\u53D1</span>
+    <span class="token function">onPageChange</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token comment">// \u4E0A\u4E00\u6B21\u7684\u7ED3\u679C\uFF0C\u4E0D\u8FC7\u662F\u4E00\u4E2A reactive</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// \u5F53\u524D\u6BCF\u9875\u5143\u7D20\u6570\u91CF result.currentPageSize \u53D8\u5316\u65F6\u89E6\u53D1</span>
+    <span class="token function">onPageSizeChange</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         result <span class="token comment">// \u4E0A\u4E00\u6B21\u7684\u7ED3\u679C\uFF0C\u4E0D\u8FC7\u662F\u4E00\u4E2A reactive</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div>`,8);function p(t,c){return e}var u=s(a,[["render",p]]);export{u as default};

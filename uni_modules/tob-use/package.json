@@ -1,17 +1,18 @@
 {
 	"id": "tob-use",
-	"displayName": "tob-use",
-	"version": "0.0.1",
+	"displayName": "tob-use 最高效好用的 composition-api 库",
+	"version": "1.0.7",
 	"description": "uniapp 的高效 use 库",
 	"keywords": [
-		"tob-use",
-		"use",
-		"hooks",
-		"hook"
-	],
-	"repository": "",
+        "use",
+        "hooks",
+        "vue3",
+        "composition-api",
+        "vueuse"
+    ],
+	"repository": "https://github.com/dishait/tob-use",
 	"engines": {
-		"HBuilderX": "^3.1.0"
+		"HBuilderX": "^3.3.11"
 	},
 	"dcloudext": {
 		"category": [
@@ -34,7 +35,7 @@
 			"data": "无",
 			"permissions": "无"
 		},
-		"npmurl": ""
+		"npmurl": "https://www.npmjs.com/package/tob-use"
 	},
 	"uni_modules": {
 		"dependencies": [],
@@ -46,7 +47,7 @@
 			},
 			"client": {
 				"Vue": {
-					"vue2": "u",
+					"vue2": "n",
 					"vue3": "y"
 				},
 				"App": {
@@ -54,28 +55,28 @@
 					"app-nvue": "u"
 				},
 				"H5-mobile": {
-					"Safari": "u",
-					"Android Browser": "u",
-					"微信浏览器(Android)": "u",
-					"QQ浏览器(Android)": "u"
+					"Safari": "y",
+					"Android Browser": "y",
+					"微信浏览器(Android)": "y",
+					"QQ浏览器(Android)": "y"
 				},
 				"H5-pc": {
 					"Chrome": "y",
-					"IE": "u",
-					"Edge": "u",
-					"Firefox": "u",
-					"Safari": "u"
+					"IE": "n",
+					"Edge": "y",
+					"Firefox": "y",
+					"Safari": "y"
 				},
 				"小程序": {
-					"微信": "u",
-					"阿里": "u",
-					"百度": "u",
-					"字节跳动": "u",
-					"QQ": "u"
+					"微信": "y",
+					"阿里": "y",
+					"百度": "y",
+					"字节跳动": "y",
+					"QQ": "y"
 				},
 				"快应用": {
-					"华为": "u",
-					"联盟": "u"
+					"华为": "y",
+					"联盟": "y"
 				}
 			}
 		}

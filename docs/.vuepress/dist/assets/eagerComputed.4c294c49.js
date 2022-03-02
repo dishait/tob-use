@@ -1,0 +1,1 @@
+import{r as n,c as o,o as r,a as u,b as c,t as l,u as d,d as i}from"./app.fad36ee9.js";const p=i(" \u70B9\u51FB \u{1F449} "),x={setup(f){const e=n(1),s=o(()=>e.value*2),a=o(()=>s.value*3);return(_,t)=>(r(),u("view",null,[p,c("button",{onClick:t[0]||(t[0]=m=>e.value++)},l(d(a)),1)]))}};export{x as default};

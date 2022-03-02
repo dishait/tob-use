@@ -16,6 +16,7 @@ const { watch, animation, component, utilities } =
 export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'tob-use',
+	base: '/tob-use/',
 	head: [
 		['link', { rel: 'icon', href: '/images/logo.svg' }]
 	],

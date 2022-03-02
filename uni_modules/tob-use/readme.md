@@ -1,27 +1,33 @@
 # tob-ui 
 
-`uniapp` 的高效 `use` 库
+**tob-use** 是由 **composition-api** 构建的 **use** 库，主要面向 **vue3** 下的 **uniapp** 高效开发
 
 <br />
 <br />
 
 ## 特点 🐳 
 
-1. 功能丰富 👉 60+ 的功能供你选择
-2. 按需加载 👉 让你的应用体积更小
-3. 灵活可配置 👉 可配置的事件过滤器
-4. 支持多端 👉 支持 app，h5 和 小程序
-5. composition 👉 完全由 composition-api 构建
-6. vue3 👉 支持最现代化的 vue3 版本
+1. 功能丰富 
+   -  `60+` 的功能供你选择
+2. 按需加载 
+   -  让你的应用体积更小
+3. 灵活可配置 
+   -  可配置的事件过滤器
+4. 支持多端 
+   - 支持 `app`，`h5` 和小程序
+5. composition 
+   - 完全由 `composition-api` 构建
+6. vue3 
+   - 支持最现代化的 `vue3` 版本
 
 
  
 <br />
 <br />
 
-## 在线文档 🐇
+## [在线文档](https://tob-use.netlify.app/) 🐇
 
-👉 TODO
+点击跳转 👉 [tob-use](https://tob-use.netlify.app/)
 
 
 <br />
@@ -29,7 +35,7 @@
 
 ## 动机 🦕
 
-为什么要做这个 **use 库** 呢?
+为什么要做这个 **use 库** 呢？
 
 1. 为了使用强大的 `composition-api`
 2. 为了让 `uniapp` 的开发更高效，节省时间做更多其他的事情
@@ -42,7 +48,9 @@
 
 ## 启发 🦖
 
-该 `use` 库 受 [vueuse](https://vueuse.org/) 启发。
+该 `use` 库 受 [vueuse](https://vueuse.org/) 启发，同时该 `use` 库绝大部分 `api` 来自其不需要依赖 `web` 环境的部分。
+
+如果你希望在 `vue3` 下为构建纯 `web` 项目提高开发效率，节省时间，那么推荐你使用 👉 [vueuse](https://vueuse.org/)。
 
 <br />
 <br />
