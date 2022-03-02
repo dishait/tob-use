@@ -16,12 +16,8 @@ const { watch, animation, component, utilities } =
 export default defineUserConfig({
 	lang: 'zh-CN',
 	title: 'tob-use',
-	base: '/tob-use/',
 	head: [
-		[
-			'link',
-			{ rel: 'icon', href: '/tob-use/images/logo.svg' }
-		]
+		['link', { rel: 'icon', href: '/images/logo.svg' }]
 	],
 	description: '基于 vuepress 的文档模板',
 	themeConfig: {
