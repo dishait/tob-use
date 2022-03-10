@@ -1,6 +1,6 @@
-import { ref, reactive, watch, effectScope } from 'vue'
-import { useToggle } from '../../utilities/useToggle'
 import { isString } from '../../shared/is'
+import { useToggle } from '../../utilities/useToggle'
+import { ref, reactive, watch, effectScope } from 'vue'
 import { useThrottleFn } from '../../utilities/useThrottleFn'
 import { tryOnScopeDispose } from '../../component/tryOnScopeDispose'
 
@@ -59,13 +59,18 @@ export const createAudio = (options = {}) => {
 		currentTime.value = Number(position)
 	}
 
-	// 重置
-	const reset = () => {
-		seek(0)
+	// 内部重置方法
+	const _reset = (resetCurrentTime = false) => {
+		if (resetCurrentTime) {
+			seek(0)
+		}
 		seekDirty = false
 		toggleWaiting(false)
 		toggleActive(false)
 	}
+
+	// 重置
+	const reset = () => _reset(true)
 
 	// 重新播放
 	const replay = () => {
@@ -78,7 +83,7 @@ export const createAudio = (options = {}) => {
 
 	// 销毁
 	const destroy = () => {
-		toggleActive(false)
+		_reset()
 		audio.destroy()
 		scope.stop()
 	}
@@ -119,26 +124,25 @@ export const createAudio = (options = {}) => {
 		isWaiting.value = true
 	})
 
-	// 自然结束时
-	audio.onEnded(() => {
-		seekDirty = false
-		toggleActive(false)
-		toggleWaiting(false)
-	})
-
 	// 发生错误时
 	audio.onError(err => {
-		seekDirty = false
-		toggleActive(false)
-		toggleWaiting(false)
+		_reset()
 		error.value = err
+	})
+
+	// 自然结束时
+	audio.onEnded(() => {
+		_reset()
 	})
 
 	// 停止时
 	audio.onStop(() => {
+		_reset()
+	})
+
+	// 跳转后
+	audio.onSeeked(() => {
 		seekDirty = false
-		toggleActive(false)
-		toggleWaiting(false)
 	})
 
 	// 播放进度更新
@@ -146,7 +150,7 @@ export const createAudio = (options = {}) => {
 		useThrottleFn(
 			() => {
 				if (!seekDirty) {
-					// 部分浏览器只支持在进度更新时获取时长
+					// 部分浏览器和小程序端只支持在进度更新时获取时长
 					// #ifdef H5
 					duration.value = audio.duration
 					// #endif
@@ -164,11 +168,6 @@ export const createAudio = (options = {}) => {
 			false
 		)
 	)
-
-	// 跳转后
-	audio.onSeeked(() => {
-		seekDirty = false
-	})
 
 	// 副作用域被 stop 时，触发 destroy
 	tryOnScopeDispose(destroy)

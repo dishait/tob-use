@@ -10,7 +10,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import Inspect from 'vite-plugin-inspect'
 import { generateApiRoutes } from './theme/shared'
 
-const { watch, animation, component, utilities } =
+const { watch, animation, component, utilities, media } =
 	generateApiRoutes()
 
 export default defineUserConfig({
@@ -75,6 +75,10 @@ export default defineUserConfig({
 						{
 							text: '动画',
 							children: animation
+						},
+						{
+							text: '媒体',
+							children: media
 						}
 					]
 				}
