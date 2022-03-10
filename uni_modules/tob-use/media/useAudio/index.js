@@ -3,6 +3,20 @@ import { createAudio } from '../createAudio'
 import { useCycleList } from '../../utilities/useCycleList'
 
 /**
+ * 正确化时间
+ */
+const normalizeTime = time => {
+	if (time === Infinity) return '00:00'
+
+	const division = Math.floor(time / 60)
+	const remainder = Math.floor(time % 60)
+	const zero = x => '0'.repeat(2 - String(x).length)
+	return `${zero(division) + division}:${
+		zero(remainder) + remainder
+	}`
+}
+
+/**
  * 使用 audio
  */
 export const useAudio = (list = [], options = {}) => {
@@ -31,11 +45,22 @@ export const useAudio = (list = [], options = {}) => {
 
 	watch(state, src => play(src))
 
+	// 需要重置
 	const shouldReset = list.length === 1
-	// 长度为 1 时重新播放
+	// 需要重新播放
 	const shouldReplay = shouldReset
 
 	audio.onEnded(() => (shouldReset ? reset() : next()))
+
+	// 规范后的总时长
+	const normalizedDuration = eagerComputed(() => {
+		return normalizeTime(duration.value)
+	})
+
+	// 规范化后的进度
+	const normalizedCurrentTime = eagerComputed(() => {
+		return normalizeTime(currentTime.value)
+	})
 
 	return {
 		play,
@@ -53,6 +78,8 @@ export const useAudio = (list = [], options = {}) => {
 		isActive,
 		isWaiting,
 		currentTime,
+		normalizedDuration,
+		normalizedCurrentTime,
 		src: state,
 		next: n => {
 			if (shouldReplay) {

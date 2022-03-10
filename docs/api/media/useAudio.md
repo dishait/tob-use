@@ -66,6 +66,8 @@ const {
     duration,
     isWaiting,
     currentTime,
+    normalizedDuration,
+    normalizedCurrentTime
 } = useAudio(playlist, { 
     autoplay: true // 设置自动播放
 })
@@ -99,6 +101,9 @@ src.value // 当前播放的音频地址
 index.value // 当前播放的 index
 
 audio // 原生 audio 对象
+
+normalizedDuration.value // 规范化后的时长，即 00:00 格式
+normalizedCurrentTime.value // 规范化后的当前进度，即 00:00 格式
 ```
 
 <br />
