@@ -1,4 +1,4 @@
-# tob-ui 
+# tob-use 
 
 **tob-use** 是由 **composition-api** 构建的 **use** 库，主要面向 **vue3** 下的 **uniapp** 高效开发
 

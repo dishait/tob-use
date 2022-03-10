@@ -43,6 +43,7 @@ const autoCreate = async () => {
 				'utilities',
 				'watch',
 				'misc',
+				'media',
 				'animation',
 				'component'
 			]
