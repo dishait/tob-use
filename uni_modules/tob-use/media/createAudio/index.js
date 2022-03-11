@@ -53,10 +53,11 @@ export const createAudio = (options = {}) => {
 	// 跳转
 	const seek = (position, changing = false) => {
 		seekDirty = true
+		currentTime.value = Number(position)
 		if (changing) {
 			return
 		}
-		currentTime.value = Number(position)
+		audio.seek(currentTime.value)
 	}
 
 	// 内部重置方法
@@ -85,32 +86,16 @@ export const createAudio = (options = {}) => {
 	const destroy = () => {
 		_reset()
 		audio.destroy()
-		scope.stop()
+		stopWatchIsActive()
 	}
 
-	const scope = effectScope()
-	scope.run(() => {
-		const watchOptions = { flush: 'sync' }
-		// 监听激活状态
-		watch(
-			isActive,
-			status => {
-				status ? audio.play() : audio.pause()
-			},
-			watchOptions
-		)
-
-		// 监听跳转
-		watch(
-			currentTime,
-			position => {
-				if (seekDirty) {
-					audio.seek(position)
-				}
-			},
-			watchOptions
-		)
-	})
+	const stopWatchIsActive = watch(
+		isActive,
+		status => {
+			status ? audio.play() : audio.pause()
+		},
+		{ flush: 'sync' }
+	)
 
 	// 可播放时
 	audio.onCanplay(() => {
