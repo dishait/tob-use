@@ -1,6 +1,7 @@
 import { watch } from 'vue'
 import { createAudio } from '../createAudio'
 import { useCycleList } from '../../utilities/useCycleList'
+import { eagerComputed } from "../../utilities/eagerComputed"
 
 /**
  * 正确化时间

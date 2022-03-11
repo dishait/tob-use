@@ -117,7 +117,7 @@ export const createAudio = (options = {}) => {
 
 	// 自然结束时
 	audio.onEnded(() => {
-		_reset()
+		_reset(true)
 	})
 
 	// 停止时

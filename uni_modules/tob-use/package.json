@@ -1,7 +1,7 @@
 {
 	"id": "tob-use",
 	"displayName": "tob-use 最高效好用的 composition-api 库",
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"description": "uniapp 的高效 use 库",
 	"keywords": [
         "use",
