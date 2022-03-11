@@ -1,15 +1,15 @@
 {
 	"id": "tob-use",
 	"displayName": "tob-use 最高效好用的 composition-api 库",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"description": "uniapp 的高效 use 库",
 	"keywords": [
-		"use",
-		"hooks",
-		"vue3",
-		"vueuse",
-		"composition-api"
-	],
+        "use",
+        "hooks",
+        "vue3",
+        "vueuse",
+        "composition-api"
+    ],
 	"repository": "https://github.com/dishait/tob-use",
 	"engines": {
 		"HBuilderX": "^3.3.11"
