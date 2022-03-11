@@ -68,6 +68,10 @@ export { watchOnce } from './watch/watchOnce'
 export { watchWithFilter } from './watch/watchWithFilter'
 export { whenever } from './watch/whenever'
 
+// 媒体
+export { createAudio } from './media/createAudio'
+export { useAudio } from './media/useAudio'
+
 // shared
 export * from './shared/is'
 export * from './shared/base'
