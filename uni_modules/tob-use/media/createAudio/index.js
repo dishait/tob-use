@@ -1,6 +1,6 @@
 import { isString } from '../../shared/is'
 import { useToggle } from '../../utilities/useToggle'
-import { ref, reactive, watch, effectScope } from 'vue'
+import { ref, reactive, watch } from 'vue'
 import { useThrottleFn } from '../../utilities/useThrottleFn'
 import { tryOnScopeDispose } from '../../component/tryOnScopeDispose'
 
