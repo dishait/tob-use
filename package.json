@@ -53,15 +53,12 @@
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
     "ityped": "^1.0.3",
-    "less": "^4.1.2",
-    "postcss-windicss": "^1.0.0",
+    "unocss": "^0.28.1",
     "unplugin-auto-import": "^0.6.1",
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.5",
     "vite-plugin-inspect": "^0.4.3",
-    "vite-plugin-windicss": "^1.8.1",
-    "vuepress": "^2.0.0-beta.35",
-    "windicss": "^3.5.0"
+    "vuepress": "^2.0.0-beta.35"
   },
   "dependencies": {
     "vue": "^3.2.31"

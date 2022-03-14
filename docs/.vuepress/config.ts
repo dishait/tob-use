@@ -1,13 +1,8 @@
 import { resolve } from 'path'
+import Unocss from 'unocss/vite'
+import Inspect from 'vite-plugin-inspect'
 import { defineUserConfig } from 'vuepress'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import {
-	NaiveUiResolver,
-	VueUseComponentsResolver
-} from 'unplugin-vue-components/resolvers'
-import WindiCSS from 'vite-plugin-windicss'
-import Inspect from 'vite-plugin-inspect'
 import { generateApiRoutes } from './theme/shared'
 
 const { watch, animation, component, utilities, media } =
@@ -115,27 +110,8 @@ export default defineUserConfig({
 				Inspect({
 					enabled: false
 				}),
-				WindiCSS({
-					scan: {
-						dirs: [
-							'../',
-							resolve(__dirname, './components'),
-							resolve(__dirname, './theme/layouts')
-						]
-					}
-				}),
-				Components({
-					dirs: '',
-					dts: resolve(
-						__dirname,
-						'./types/components.d.ts'
-					),
-					extensions: ['vue', 'md'],
-					include: [/\.md$/, /\.vue$/],
-					resolvers: [
-						NaiveUiResolver(),
-						VueUseComponentsResolver()
-					]
+				Unocss({
+					mode: 'per-module'
 				}),
 				AutoImport({
 					dts: resolve(
