@@ -24,7 +24,8 @@ export default defineUserConfig({
 			},
 			{
 				text: 'API 参考',
-				link: utilities[0]
+				link: utilities[0],
+				activeMatch: '^/api/'
 			},
 			{
 				text: '关于',
