@@ -53,7 +53,7 @@ export function useStorage(key, initialValue, options = {}) {
 	const type = guessSerializerType(rawInit)
 	const serializer = StorageSerializers[type]
 
-	const { stop, resume } = pausableWatch(data, () => write(data.value), {
+	const { pause, resume } = pausableWatch(data, () => write(data.value), {
 		flush,
 		deep,
 		eventFilter
@@ -80,11 +80,11 @@ export function useStorage(key, initialValue, options = {}) {
 			return
 		}
 
-		stop()
+		pause()
 
 		try {
 			const rawValue = event ? event.newValue : uni.getStorageSync(key)
-			if (rawValue == null) {
+			if (rawValue == null || rawValue == '') {
 				if (writeDefaults && rawInit !== null) {
 					uni.setStorageSync(key, serializer.write(rawInit))
 				}
