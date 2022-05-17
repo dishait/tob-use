@@ -5,8 +5,14 @@ import { defineUserConfig } from 'vuepress'
 import AutoImport from 'unplugin-auto-import/vite'
 import { generateApiRoutes } from './theme/shared'
 
-const { watch, animation, component, utilities, media } =
-	generateApiRoutes()
+const {
+	watch,
+	animation,
+	component,
+	utilities,
+	media,
+	state
+} = generateApiRoutes()
 
 export default defineUserConfig({
 	lang: 'zh-CN',
@@ -75,6 +81,10 @@ export default defineUserConfig({
 						{
 							text: '媒体',
 							children: media
+						},
+						{
+							text: '状态',
+							children: state
 						}
 					]
 				}
