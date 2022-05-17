@@ -3,4 +3,5 @@ dist
 .temp
 unpackage
 node_modules
+.idea
 

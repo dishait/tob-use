@@ -4,6 +4,9 @@ export { useIntervalFn } from './animation/useIntervalFn'
 export { useTimeout } from './animation/useTimeout'
 export { useTimeoutFn } from './animation/useTimeoutFn'
 
+// 状态 1
+export { useStorage } from './state/useStorage'
+
 // 组件相关 9
 export { computedInject } from './component/computedInject'
 export { tryOnBeforeUnmount } from './component/tryOnBeforeUnmount'
