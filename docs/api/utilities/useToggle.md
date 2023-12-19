@@ -27,7 +27,7 @@ import { useToggle } from '@/uni_modules/tob-use'
 
 const state = ref(false)
 
-const toggle = useToggle()
+const toggle = useToggle(state)
 
 state.value // false
 
